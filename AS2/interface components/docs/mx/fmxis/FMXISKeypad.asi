@@ -1,0 +1,25 @@
+intrinsic class mx.fmxis.FMXISKeypad extends mx.fmxis.FMXISBase {
+  public var _cols:Number;
+  public var _rows:Number;
+  var className:String;
+  public var evtKeyDown:String;
+  public var evtKeyUp:String;
+  public var holdDur:Number;
+  static var keyEvents:Array;
+  public var repFreq:Number;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get keyOffset();
+  public function set keyOffset(value);
+  public function get showHand();
+  public function set showHand(value);
+  public function get xSpacing();
+  public function set xSpacing(value);
+  public function get ySpacing();
+  public function set ySpacing(value);
+  public function execEvent(evName:String, evVal, q:Boolean):Void;
+  function pressKey(knum, q);
+  function releaseKey(knum, q);
+  public function resetKeysToUp(q);
+  public function setGrid(r, c, chars, nk);
+}

@@ -1,0 +1,43 @@
+<html><head><title>FMXISPotentiometer Class</title><script language="JavaScript" src="../../_sharedassets/pages.js"></script></head><body><table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1" /></td></tr><tr><td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%" /></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="11" width="1" /></td></tr></table><h1>FMXISPotentiometer Class</h1><p><strong>Inheritance </strong>
+			
+			&gt;
+			
+		<a href="content_f574e305.htm">FMXISBase</a>
+			
+			&gt;
+			
+		<a href="content_1eb61832.htm">FMXISJog</a>
+			
+			&gt;
+			
+		<a href="content_c3a55b29.htm">FMXISPotentiometer</a></p><p><strong>ActionScript Class Name</strong> mx.fmxis.FMXISPotentiometer</p><p><p>This class implements a simple potentiometer, which is virtually identical in functionality to
+the jog knob we implemented (FMXISJog).  Developers can set the increment, number of values
+in one cycle, integer vs. discrete, minimum and maximum values, and whether the jog is adjusted by clicking and dragging,
+or merely moving in a circular motion (<code>dragOrOver</code>).</p>
+</p><p>
+Developers can change the appearance by modifying:
+<li><code>defPotBkgnd</code> - background</li>
+<li><code>defPotIndicator</code> - indicator clip</li>
+<li><code>defPotIncr</code> - Increment button (increments by 1 unit)</li>
+<li><code>defPotDecr</code> - Decrement button (decrements by 1 unit)</li>
+</p><p>
+<p>The class also has one property that developers can set in the component property panel,
+<code>indLinkID</code>, that replaces the default indicator graphic with a movie clip from
+the Library specified by the linkage ID supplied.  The movie clip must have its center at
+the center of rotation, so if the developer simply wants to change the indicator (notch), then the
+indicator should be placed in the topmost (pointing up) position at the edge of the background.  When
+a linkage ID is given, the component scales the background graphic to the maximum dimension of the indicator
+movie clip, so the hit area (determined by the background) is correct.  Usually, the developer will
+want to turn off the background graphic (using the property in the component property panel).</p>
+<p>The class has one event, by default called "onValChg" (but this can
+be changed in the property inspector, or by changing the <code>vChg</code> property), and
+the value is the new value of the potentiometer.  If the user does not change values, this component
+still reports the current knob position.  The <code>drawTicks</code> property, if true, tells the component
+to draw <code>numTicks</code> ticks.</p>
+</p><p>
+<p>The potentiometer value can be set using the <code>val</code> property or through the <code>setVal()</code> method.</p>
+</p><p>
+<p>This class inherits from <code>FMXISJog</code> to get most of its functionality.</p></p><h3>
+					Method summary for the FMXISPotentiometer Class</h3><table border="0" cellpadding="0" cellspacing="0"><tr><th><p>Method </p></th><th><p>Description </p></th></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_8ca25eb0.htm"><code>FMXISPotentiometer.execEvent()</code></a></p></td><td><p>Given an event string and value that matches what this component would generate, perform the action.</p></td></tr><tr><td valign="top"><p><a href="content_b010029e.htm"><code>FMXISPotentiometer.setVal()</code></a></p></td><td><p>Sets the potentiometer value.</p></td></tr></table><h3>
+					Property summary for the FMXISPotentiometer Class</h3><table border="0" cellpadding="0" cellspacing="0"><tr><th><p>Property </p></th><th><p>Description </p></th></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_ee817a0e.htm"><code>FMXISPotentiometer.className</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_9000ee48.htm"><code>FMXISPotentiometer.maxVal</code></a></p></td><td><p></p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_8f73da16.htm"><code>FMXISPotentiometer.minVal</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_5c853686.htm"><code>FMXISPotentiometer.symbolName</code></a></p></td><td><p></p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_ed43c0a0.htm"><code>FMXISPotentiometer.symbolOwner</code></a></p></td><td><p></p></td></tr></table><h3>
+					Event summary for the FMXISPotentiometer Class</h3><p>No events defined.</p><table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="6" width="1" /></td></tr><tr><td colspan="2"><img src="_sharedassets/pixel.gif" height="1" width="100%" /></td></tr><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="4" width="1" /></td></tr></table><br /><br /><hr /><span style='font-size: x-small; font-family: Verdana, Arial'>Documentation generated by <a href='http://wwww.blinex.com/products/bldoc' target='_blank' alt='BLDoc Link'>BLDoc Community Edition</a> from <a href='http://www.blinex.com' target='_blank' alt='B-Line Express Website'>B-Line Express</a>.</body></html>

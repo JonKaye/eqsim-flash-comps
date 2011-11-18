@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>transLvl</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="../../_sharedassets/pages.js"></script>
+</head>
+<body>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="100%" align="left"></td>
+    <td><a href="FStEngOneFive_103.html"><img src="../../_sharedassets/previous.gif" alt="Previous" border="0"></a><img src="../../_sharedassets/shim.gif" width="10"  height="1"><a href="FStEngOneFive_87.html"><img src="../../_sharedassets/next.gif" alt="Next"></a></td>
+  </tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="11" width="1"></td></tr></table>
+<h1>transLvl</h1>
+<h4>Description</h4>
+<p>The <font face="Courier New, Courier, mono">transLvl</font> is a transition 
+  that links two states (source and target) not in the same layer of the network, 
+  i.e., not sibling states. To traverse this transition requires knowing the least 
+  common ancestor (LCA) of the two states, and then the path from the LCA down 
+  to the target (or history).</p>
+<h4>Usage</h4>
+<pre><i>new transLvl(fn, upLevels, statePath, histFlag);</i>
+</pre>
+<h4>Parameters</h4>
+<p><i>fn</i> Function to execute when this transition fires</p>
+<p><i>upLevels</i> Number of levels to ascend to the LCA. If this transition goes 
+  into a sub-state of the current state, this value is set to -1.</p>
+<p><i>statePath </i>An array of state ID's on the path from the LCA to the target</p>
+<p><i>histFlag </i>Boolean value indicating whether to use the last state visited 
+  (history) after entering the last state in the state path, or not (default is 
+  <font face="Courier New, Courier, mono">false</font>) </p>
+<h4>Example</h4>
+<pre>
+<i>// LCA is 2 levels up, target is 2 levels up and 1 state down from there (ID #3)
+myState.addTrans(0, new transLvl(myTransFn, 2, [ 3 ]), "onButtonPress");</i></pre>
+<h4>Code Hint</h4>
+<p>Variable names with the suffix &quot;_transLvl&quot; are recognized for the 
+  sake of codehinting, as multi-level transitions.</p>
+<p>&nbsp;</p>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="6" width="1"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td width="100%" align="left"></td>
+    <td><a href="FStEngOneFive_103.html"><img src="../../_sharedassets/previous.gif" alt="Previous" border="0"></a><img src="../../_sharedassets/shim.gif" width="10" height="1"><a href="FStEngOneFive_87.html"><img src="../../_sharedassets/next.gif" alt="Next"></a></td>
+  </tr></table>
+</body>
+</html>

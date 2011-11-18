@@ -1,0 +1,774 @@
+<html>
+<head>
+<title>Statechart XML to Code</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="../../_sharedassets/pages.js"></script>
+</head>
+<body bgcolor="#FFFFFF">
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="100%" align="left"></td>
+    <td><a href="FStEngOneFive_200.html"><img src="../../_sharedassets/previous.gif" alt="Previous" border="0"></a></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="../../_sharedassets/shim.gif" height="11" width="1"></td>
+  </tr>
+</table>
+<h1>Statechart XML to Code</h1>
+<p>This utility is installed as a window off of Flash's toolbar, under <font face="Courier New, Courier, mono">Window 
+  &gt; Other Panels &gt; Statechart XML to Code</font>. The utility translates 
+  a given XML document (selected by the user, or pasted into the text box provided) 
+  into code compatible with the state engine architecture. The basic idea is that 
+  you paste in your XML code into the top box or select a valid XML file after 
+  choosing Select XML File, then press the Generate Code button. The code appears 
+  in the bottom text box. You will see if the compiler had a problem, it will 
+  tell you in the header comments how many errors were encountered. This is a 
+  simple program and still leaves a lot to be desired of in terms of error checking 
+  in your XML description, but we have found this simple tool to allow us to shorten 
+  our production time (from design to code) significantly. It also allows us to 
+  more easily test designs at an earlier stage, since we can generate code rapidly.</p>
+<h4>The Basic XML Description</h4>
+<p>Below, you will find example XML code you can use to explore the XML elements 
+  and attributes. As well, we have included a description below that sketches 
+  the allowable elements and attributes for use as a reference.</p>
+<p>We have defined our XML elements to follow the basic conventions described 
+  in our book. The XML code has two parts (1) the description of the state machine, 
+  and (2) a description of the events. These are coded as follows:</p>
+<p><font face="Courier New, Courier, mono">&lt;HSM name=&quot;My State Engine&quot;&gt;<br>
+  ...&lt;/HSM&gt;<br>
+  &lt;events&gt;...&lt;/events&gt;</font></p>
+<p> As you might imagine, within the HSM tag, you place a hierarchical arrangement 
+  of <font face="Courier New, Courier, mono">state</font>, <font face="Courier New, Courier, mono">hState</font>, 
+  and <font face="Courier New, Courier, mono">hStateC</font> elements.</p>
+<h4><a href="" onClick="return toggleProcedure('1')" onFocus="this.blur()"><img src="../../_sharedassets/expand.gif" ID="expander1" class="expander">See 
+  an example XML document that generates the infrastructure for a basic traffic 
+  light</a></h4>
+<div class="procedure" id="procedure1">
+<blockquote>
+    <pre>
+&lt;HSM name="Traffic Light"&gt;
+	&lt;authors>Jonathan Kaye&lt;/authors&gt;
+	&lt;local varName="se1"/&gt;
+	&lt;description&gt;This makes a traffic light infrastructure&lt;/description&gt;
+	&lt;hState name="State Net"&gt;
+		&lt;local id="0" varName="sn1" mgrName="sm1" /&gt;
+		&lt;state name="Red light" defaultStart="true"&gt;
+			&lt;local id="0" varName="s0"/&gt;
+			&lt;onEnter&gt;
+			&lt;/onEnter&gt;
+			&lt;onLeave&gt;
+			&lt;/onLeave&gt;
+			
+			&lt;transition trigger="onTimeout" targetName="Green light"&gt;
+			&lt;/transition&gt;
+		&lt;/state&gt;
+		&lt;state name="Yellow light"&gt;
+			&lt;local id="1" varName="s1"/&gt;
+			&lt;onEnter&gt;
+			&lt;/onEnter&gt;
+			&lt;onLeave&gt;
+			&lt;/onLeave&gt;
+			
+			&lt;transition trigger="onTimeout" targetName="Red light"&gt;
+			&lt;/transition&gt;
+		&lt;/state&gt;
+		&lt;state name="Green light"&gt;
+			&lt;local id="2" varName="s2"/&gt;
+			&lt;onEnter&gt;
+			&lt;/onEnter&gt;
+			&lt;onLeave&gt;
+			&lt;/onLeave&gt;
+			
+			&lt;transition trigger="onTimeout" targetName="Yellow light"&gt;
+			&lt;/transition&gt;
+		&lt;/state&gt;
+
+	&lt;/hState&gt;
+&lt;/HSM&gt;
+
+&lt;events&gt;
+	&lt;simpleEvent name="onTimeout"&gt;
+		&lt;local condition="{evID} == &amp;quot;EndTime&amp;quot;" /&gt;
+	&lt;/simpleEvent&gt;
+&lt;/events&gt;
+</pre>
+  </blockquote>
+</div>
+<h4><a href="" onClick="return toggleProcedure('2')" onFocus="this.blur()"><img src="../../_sharedassets/expand.gif" ID="expander2" class="expander">See 
+  an example XML document that generates the infrastructure for the Stolex watch interface (from book)</a></h4>
+<div class="procedure" id="procedure2">
+<blockquote>
+<pre>
+&lt;?xml version="1.0"?&gt;
+
+&lt;HSM name="Watch Interface"&gt;
+	&lt;authors&gt;Jonathan Kaye&lt;/authors&gt;
+	&lt;local varName="co"/&gt;
+	&lt;description&gt;This HSM implements the analog/digital watch from "Flash MX for Interactive Simulation".&lt;/description&gt;
+	&lt;hState name="State Net"&gt;
+		&lt;local id="10" varName="sn" mgrName="co_sm1" /&gt;
+		&lt;state name="Config" defaultStart="true"&gt;
+			&lt;local id="50" /&gt;
+			&lt;onEnter&gt;
+				&lt;code&gt;
+				&lt;![CDATA[
+				var x = _root.getStart();
+				if (x != undefined) {
+					co_sm1.defSt = 0;
+					if (x == 4)
+						x = 12;
+					sn.chgSt(x);
+				} else {
+					sn.chgSt(0);
+				}
+				]]&gt;
+				&lt;/code&gt;
+			&lt;/onEnter&gt;
+		&lt;/state&gt;
+		
+		&lt;hState name="Time"&gt;
+			&lt;local id="0" varName="s0" /&gt;
+			&lt;state name="Normal" defaultStart="true"&gt;
+				&lt;local id="0" /&gt;
+			
+				&lt;intAct trigger="onRightBotButtonDown"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					swTime.reset(); swTime.start();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				&lt;intAct trigger="onRightBotButtonUp"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					swTime.reset();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				
+				&lt;transition trigger="onEndTime" targetName="Set Sec"&gt;
+					&lt;local id="1" /&gt;
+				&lt;/transition&gt;
+				&lt;transition trigger="onRightTopButtonDown" targetName="Date"&gt;
+					&lt;local id="4" levels2LCA="1" path2Target="1" /&gt;
+				&lt;/transition&gt;
+			&lt;/state&gt;
+			
+			&lt;state name="Set Sec"&gt;
+				&lt;local id="1" /&gt;
+				&lt;onLeave&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					rightDigs.display(true);
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/onLeave&gt;
+				&lt;intAct trigger="onRightTopButtonDown"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					co.notifyListeners("sec2zero"); co.updTimeDisp();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				
+				&lt;pulseAct type="method" interval="250"&gt;
+					&lt;method instance="co" name="blinkRDigs" /&gt;
+				&lt;/pulseAct&gt;
+				
+				&lt;transition trigger="onRightBotButtonDown" targetName="Set Min"&gt;
+					&lt;local id="0" /&gt;
+				&lt;/transition&gt;
+
+			&lt;/state&gt;
+			&lt;state name="Set Min"&gt;
+				&lt;local id="2" /&gt;
+				&lt;onLeave&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					// turn hours digits on
+					midDigs.display(true);
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/onLeave&gt;
+				&lt;intAct trigger="onRightTopButtonDown"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					co.notifyListeners("addMin"); co.updTimeDisp();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				
+				&lt;pulseAct type="method" interval="250"&gt;
+					&lt;method instance="co" name="blinkMDigs" /&gt;
+				&lt;/pulseAct&gt;
+				
+				&lt;transition trigger="onRightBotButtonDown" targetName="Set Hr"&gt;
+					&lt;local id="0" /&gt;
+				&lt;/transition&gt;
+			&lt;/state&gt;
+			
+			&lt;state name="Set Hr"&gt;
+				&lt;local id="3" /&gt;
+				&lt;onLeave&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					// turn hours digits on
+					leftDigs.display(true);
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/onLeave&gt;
+				&lt;intAct trigger="onRightTopButtonDown"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					co.notifyListeners("addHr"); co.updTimeDisp();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				
+				&lt;pulseAct type="method" interval="250"&gt;
+					&lt;method instance="co" name="blinkLDigs" /&gt;
+				&lt;/pulseAct&gt;
+				
+				&lt;transition trigger="onRightBotButtonDown" targetName="Normal"&gt;
+					&lt;local id="0" /&gt;
+				&lt;/transition&gt;
+			&lt;/state&gt;
+			
+			&lt;onEnter&gt;
+				&lt;code&gt;
+				&lt;![CDATA[
+				co.updTimeDisp();
+				sep._visible = true;
+				sep.gotoAndStop(1);
+				co.sepBlinkOn = true;
+				]]&gt;
+				&lt;/code&gt;
+			&lt;/onEnter&gt;
+			&lt;onLeave&gt;
+				&lt;code&gt;
+				&lt;![CDATA[
+				sep._visible = false;
+				]]&gt;
+				&lt;/code&gt;
+			&lt;/onLeave&gt;
+			
+			&lt;pulseAct type="method" interval="200"&gt;
+				&lt;local id="1" /&gt;
+				&lt;method instance="co" name="updTimeDisp" /&gt;
+			&lt;/pulseAct&gt;
+			&lt;pulseAct type="method" interval="500"&gt;
+				&lt;local id="2" /&gt;
+				&lt;method instance="co" name="updBlink" /&gt;
+			&lt;/pulseAct&gt;
+		&lt;/hState&gt;
+		
+		&lt;hState name="Date"&gt;
+			&lt;local id="1" varName="s1" /&gt;
+			&lt;state name="Normal" defaultStart="true"&gt;
+				&lt;local id="0" /&gt;
+			
+				&lt;intAct trigger="onRightBotButtonDown"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					swTime.reset(); swTime.start();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				&lt;intAct trigger="onRightBotButtonUp"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					swTime.reset();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				
+				&lt;transition trigger="onEndTime" targetName="Set Month"&gt;
+					&lt;local id="1" /&gt;
+				&lt;/transition&gt;
+				&lt;transition trigger="onRightTopButtonDown" targetName="Alt Time"&gt;
+					&lt;local id="5" levels2LCA="1" path2Target="3" /&gt;
+				&lt;/transition&gt;
+			&lt;/state&gt;
+			
+			&lt;state name="Set Month"&gt;
+				&lt;local id="1" /&gt;
+				&lt;onLeave&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					leftDigs.display(true);
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/onLeave&gt;
+				&lt;intAct trigger="onRightTopButtonDown"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					// tell model to increment month by 1
+					co.notifyListeners("addMonth"); co.updDateDisp();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				
+				&lt;pulseAct type="method" interval="250"&gt;
+					&lt;method instance="co" name="blinkLDigs" /&gt;
+				&lt;/pulseAct&gt;
+				
+				&lt;transition trigger="onRightBotButtonDown" targetName="Set Date"&gt;
+					&lt;local id="0" /&gt;
+				&lt;/transition&gt;
+			&lt;/state&gt;
+			
+			&lt;state name="Set Date"&gt;
+				&lt;local id="2" /&gt;
+				&lt;onLeave&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					// turn minutes digits on
+					midDigs.display(true);
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/onLeave&gt;
+				&lt;intAct trigger="onRightTopButtonDown"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					co.notifyListeners("addDay"); co.updDateDisp();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				
+				&lt;pulseAct type="method" interval="250"&gt;
+					&lt;method instance="co" name="blinkMDigs" /&gt;
+				&lt;/pulseAct&gt;
+				
+				&lt;transition trigger="onRightBotButtonDown" targetName="Set DoW"&gt;
+					&lt;local id="0" /&gt;
+				&lt;/transition&gt;
+			&lt;/state&gt;
+			
+			&lt;state name="Set DoW"&gt;
+				&lt;local id="3" /&gt;
+				&lt;onLeave&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					rightDigs.display(true);
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/onLeave&gt;
+				&lt;intAct trigger="onRightTopButtonDown"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					co.notifyListeners("addDoW"); co.updDateDisp();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				
+				&lt;pulseAct type="method" interval="250"&gt;
+					&lt;method instance="co" name="blinkRDigs" /&gt;
+				&lt;/pulseAct&gt;
+				
+				&lt;transition trigger="onRightBotButtonDown" targetName="Normal"&gt;
+					&lt;local id="0" /&gt;
+				&lt;/transition&gt;
+			&lt;/state&gt;
+			
+			&lt;onEnter&gt;
+				&lt;code&gt;
+				&lt;![CDATA[
+				co.updDateDisp();
+				sep._visible = true;
+				sep.gotoAndStop(2);
+				]]&gt;
+				&lt;/code&gt;
+			&lt;/onEnter&gt;
+			&lt;onLeave&gt;
+				&lt;code&gt;
+				&lt;![CDATA[
+				sep._visible = false;
+				]]&gt;
+				&lt;/code&gt;
+			&lt;/onLeave&gt;
+			
+			&lt;pulseAct type="method" interval="1000"&gt;
+				&lt;method instance="co" name="updDateDisp" /&gt;
+			&lt;/pulseAct&gt;
+		&lt;/hState&gt;
+		
+		&lt;hState name="Alt Time"&gt;
+			&lt;local id="3" varName="s3" /&gt;
+			&lt;state name="Alt Normal" defaultStart="true"&gt;
+				&lt;local id="0" /&gt;
+				&lt;intAct trigger="onRightBotButtonDown"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					swTime.reset(); swTime.start();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				&lt;intAct trigger="onRightBotButtonUp"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					swTime.reset();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				
+				&lt;transition trigger="onEndTime" targetName="Alt Set Sec"&gt;
+					&lt;local id="1" /&gt;
+				&lt;/transition&gt;
+				&lt;transition trigger="onRightTopButtonDown" targetName="Stopwatch" history="true"&gt;
+					&lt;local id="11" levels2LCA="1" path2Target="2" /&gt;
+				&lt;/transition&gt;
+			&lt;/state&gt;
+			
+			&lt;state name="Alt Set Sec"&gt;
+				&lt;local id="1" /&gt;
+				&lt;onLeave&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					rightDigs.display(true);
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/onLeave&gt;
+				&lt;intAct trigger="onRightTopButtonDown"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					co.notifyListeners("altsec2zero"); co.updAltTimeDisp();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				
+				&lt;pulseAct type="method" interval="250"&gt;
+					&lt;method instance="co" name="blinkRDigs" /&gt;
+				&lt;/pulseAct&gt;
+				
+				&lt;transition trigger="onRightBotButtonDown" targetName="Alt Set Min"&gt;
+					&lt;local id="0" /&gt;
+				&lt;/transition&gt;
+
+			&lt;/state&gt;
+			&lt;state name="Alt Set Min"&gt;
+				&lt;local id="2" /&gt;
+				&lt;onLeave&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					// turn hours digits on
+					midDigs.display(true);
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/onLeave&gt;
+				&lt;intAct trigger="onRightTopButtonDown"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					co.notifyListeners("addAltMin"); co.updAltTimeDisp();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				
+				&lt;pulseAct type="method" interval="250"&gt;
+					&lt;method instance="co" name="blinkMDigs" /&gt;
+				&lt;/pulseAct&gt;
+				
+				&lt;transition trigger="onRightBotButtonDown" targetName="Alt Set Hr"&gt;
+					&lt;local id="0" /&gt;
+				&lt;/transition&gt;
+			&lt;/state&gt;
+			
+			&lt;state name="Alt Set Hr"&gt;
+				&lt;local id="3" /&gt;
+				&lt;onLeave&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					// turn hours digits on
+					leftDigs.display(true);
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/onLeave&gt;
+				&lt;intAct trigger="onRightTopButtonDown"&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					co.notifyListeners("addAltHr"); co.updAltTimeDisp();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/intAct&gt;
+				
+				&lt;pulseAct type="method" interval="250"&gt;
+					&lt;method instance="co" name="blinkLDigs" /&gt;
+				&lt;/pulseAct&gt;
+				
+				&lt;transition trigger="onRightBotButtonDown" targetName="Alt Normal"&gt;
+					&lt;local id="0" /&gt;
+				&lt;/transition&gt;
+			&lt;/state&gt;
+			
+			&lt;onEnter&gt;
+				&lt;code&gt;
+				&lt;![CDATA[
+				co.updAltTimeDisp();
+				sep._visible = true;
+				sep.gotoAndStop(1);
+				co.sepBlinkOn = true;
+				]]&gt;
+				&lt;/code&gt;
+			&lt;/onEnter&gt;
+			&lt;onLeave&gt;
+				&lt;code&gt;
+				&lt;![CDATA[
+				sep._visible = false;
+				]]&gt;
+				&lt;/code&gt;
+			&lt;/onLeave&gt;
+			
+			&lt;pulseAct type="method" interval="200"&gt;
+				&lt;local id="1" /&gt;
+				&lt;method instance="co" name="updAltTimeDisp" /&gt;
+			&lt;/pulseAct&gt;
+			&lt;pulseAct type="method" interval="500"&gt;
+				&lt;local id="2" /&gt;
+				&lt;method instance="co" name="updBlink" /&gt;
+			&lt;/pulseAct&gt;
+		&lt;/hState&gt;
+		
+		&lt;hState name="Stopwatch"&gt;
+			&lt;local id="2" /&gt;
+			
+			&lt;state name="Stop"  defaultStart="true"&gt;
+				&lt;local id="21" /&gt;
+				&lt;onEnter&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					co.notifyListeners("swHalt");
+					co.updSWDisp();
+					sep._visible = true;
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/onEnter&gt;
+				&lt;transition trigger="onRightBotButtonDown" targetName="Run"&gt;
+					&lt;local id="8" /&gt;
+				&lt;/transition&gt;
+			&lt;/state&gt;
+			
+			&lt;state name="Run"&gt;
+				&lt;local id="20" /&gt;
+				&lt;onEnter&gt;
+					&lt;code&gt;
+					&lt;![CDATA[
+					co.notifyListeners("swRun");
+					co.updSWDisp();
+					]]&gt;
+					&lt;/code&gt;
+				&lt;/onEnter&gt;
+				&lt;pulseAct type="method" interval="25"&gt;
+					&lt;local id="3" /&gt;
+					&lt;method instance="co" name="updSWDisp" /&gt;
+				&lt;/pulseAct&gt;
+				&lt;pulseAct type="method" interval="500"&gt;
+					&lt;local id="4" /&gt;
+					&lt;method instance="co" name="updBlink" /&gt;
+				&lt;/pulseAct&gt;
+				&lt;transition trigger="onRightBotButtonDown" targetName="Stop"&gt;
+					&lt;local id="9" /&gt;
+				&lt;/transition&gt;
+			&lt;/state&gt;
+			
+			&lt;onEnter&gt;
+				&lt;code&gt;
+				&lt;![CDATA[
+				co.updSWDisp();
+				sep._visible = true;
+				sep.gotoAndStop(1);
+				co.sepBlinkOn = true;
+				]]&gt;
+				&lt;/code&gt;
+			&lt;/onEnter&gt;
+			
+			&lt;onLeave&gt;
+				&lt;code&gt;
+				&lt;![CDATA[
+				sep._visible = false;
+				]]&gt;
+				&lt;/code&gt;
+			&lt;/onLeave&gt;
+			
+			&lt;intAct trigger="onRightBotButtonDown"&gt;
+				&lt;code&gt;
+				&lt;![CDATA[
+				swTime.reset(); swTime.start();
+				]]&gt;
+				&lt;/code&gt;
+			&lt;/intAct&gt;
+			&lt;intAct trigger="onRightBotButtonUp" passValue="false"&gt;
+				&lt;code&gt;
+				&lt;![CDATA[
+				swTime.reset();
+				]]&gt;
+				&lt;/code&gt;
+			&lt;/intAct&gt;
+			
+			&lt;transition trigger="onRightTopButtonDown" targetName="Time"&gt;
+				&lt;local id="6" /&gt;
+			&lt;/transition&gt;
+			&lt;transition trigger="onEndTime" targetName="Stop"&gt;
+				&lt;local id="7" levels2LCA="-1" path2Target="21" /&gt;
+				&lt;code&gt;
+				&lt;![CDATA[
+				co.notifyListeners("swReset");
+				]]&gt;
+				&lt;/code&gt;
+			&lt;/transition&gt;
+				
+		&lt;/hState&gt;
+		
+		&lt;onEnter&gt;
+			&lt;code&gt;
+			&lt;![CDATA[
+			co.updHands();
+			]]&gt;
+			&lt;/code&gt;
+		&lt;/onEnter&gt;
+		
+		&lt;pulseAct type="method" interval="200" &gt;
+			&lt;method instance="co" name="updHands" /&gt;
+		&lt;/pulseAct&gt;
+		
+		&lt;intAct trigger="onLeftTopButtonDown"&gt;
+			&lt;code&gt;
+			&lt;![CDATA[
+			df.gotoAndStop(2);
+			]]&gt;
+			&lt;/code&gt;
+		&lt;/intAct&gt;
+		&lt;intAct trigger="onLeftTopButtonUp"&gt;
+			&lt;code&gt;
+			&lt;![CDATA[
+			df.gotoAndStop(1);
+			]]&gt;
+			&lt;/code&gt;
+		&lt;/intAct&gt;
+		
+		&lt;transition name="" targetName="Time"&gt;
+			&lt;local id="0" levels2LCA="-1" path2Target="0" /&gt;
+		&lt;/transition&gt;
+		&lt;transition name="" targetName="Date"&gt;
+			&lt;local id="1" levels2LCA="-1" path2Target="3" /&gt;
+		&lt;/transition&gt;
+		&lt;transition name="" targetName="Stopwatch"&gt;
+			&lt;local id="2" levels2LCA="-1" path2Target="2" /&gt;
+		&lt;/transition&gt;
+		&lt;transition name="" targetName="Run"&gt;
+			&lt;local id="3" levels2LCA="-1" path2Target="2, 20" /&gt;
+		&lt;/transition&gt;
+		&lt;transition name="" targetName="Alt Time"&gt;
+			&lt;local id="12" levels2LCA="-1" path2Target="3" /&gt;
+		&lt;/transition&gt;
+	&lt;/hState&gt;
+&lt;/HSM&gt;
+
+&lt;events&gt;
+	&lt;compoundEvent name="onLeftTopButtonDown"&gt;
+		&lt;local condition="{evID} == &amp;quot;leftBut&amp;quot; &amp;&amp; {evVal} == &amp;quot;dn&amp;quot;" /&gt;
+	&lt;/compoundEvent&gt;
+		
+	&lt;compoundEvent name="onLeftTopButtonUp"&gt;
+		&lt;local condition="{evID} == &amp;quot;leftBut&amp;quot; &amp;&amp; {evVal} != &amp;quot;dn&amp;quot;" /&gt;
+	&lt;/compoundEvent&gt;
+		
+	&lt;compoundEvent name="onRightTopButtonDown"&gt;
+		&lt;local condition="{evID} == &amp;quot;rightTopBut&amp;quot; &amp;&amp; {evVal} == &amp;quot;dn&amp;quot;" /&gt;
+	&lt;/compoundEvent&gt;
+		
+	&lt;compoundEvent name="onRightTopButtonUp"&gt;
+		&lt;local condition="{evID} == &amp;quot;rightTopBut&amp;quot; &amp;&amp; {evVal} != &amp;quot;dn&amp;quot;" /&gt;
+	&lt;/compoundEvent&gt;
+		
+	&lt;compoundEvent name="onRightBotButtonDown"&gt;
+		&lt;local condition="{evID} == &amp;quot;rightBotBut&amp;quot; &amp;&amp; {evVal} == &amp;quot;dn&amp;quot;" /&gt;
+	&lt;/compoundEvent&gt;
+		
+	&lt;compoundEvent name="onRightBotButtonUp"&gt;
+		&lt;local condition="{evID} == &amp;quot;rightBotBut&amp;quot; &amp;&amp; {evVal} != &amp;quot;dn&amp;quot;" /&gt;
+	&lt;/compoundEvent&gt;
+		
+	&lt;simpleEvent name="onEndTime"&gt;
+		&lt;local condition="{evID} == &amp;quot;onEndTime&amp;quot;" /&gt;
+	&lt;/simpleEvent&gt;
+&lt;/events&gt;
+</pre>
+</blockquote>
+</div>
+<p>For more information and examples, please visit <a href="http://www.FlashSim.com" target="_blank">www.FlashSim.com</a>.</p>
+<h4>Further Details</h4>
+<p >This tool is designed to allow you to rapidly generate code 
+  from a simple skeleton XML description.  We have found that the mistakes we 
+  make in first writing code have to do with improperly arranging the hierarchies 
+  of states.  This tool has helped us to reduce those errors because we can easily 
+  mock up the state hierarchy and quickly generate the skeleton code.</span></p>
+<p >We took the description one step farther, however.  You can also specify code 
+  blocks, method names, instances, and variables.  All the specific information 
+  for this platform is derived from information contained in the </span><span
+style='font-size:12.0pt'>&lt;local/&gt;</span> tags.  The FStEng v1.5 platform 
+  requires knowing considerable information about transitions, namely where the 
+  least common ancestor (LCA) of the source and target states is, and the path 
+  to the target. This tool, if such information is not provided, looks in the 
+  immediate network of states for the target (name).  If it does not find it, 
+  it reports an error.</p>
+<div style='border:none;border-bottom:solid windowtext 1.0pt;
+padding:0in 0in 1.0pt 0in'> 
+  <p  style='border:none;padding:0in;'>The best way to use this tool is to examine 
+    the example code provided, and to try things out.  You will see that you can 
+    add comments to each element, and they will be reproduced in the final code.  
+    This helps by giving you a means to orient yourself in the generated source 
+    code.</span></p>
+  <p  style='border:none;padding:0in;'>&nbsp;</p>
+</div>
+<p >This is a schema, of sorts. <strong>Note</strong>: All <font face="Courier New, Courier, mono">&lt;code&gt;</font> 
+  tags require the <font face="Courier New, Courier, mono">CDATA</font> block, 
+  as indicated.</p>
+<pre>
+&lt;state name [defaultStart=&quot;true&quot;]&gt;
+        &lt;local id [varName]/&gt;
+        &lt;comment&gt;some comment here&lt;/comment&gt;
+        &lt;onEnter&gt;
+              &lt;comment&gt;some comment here&lt;/comment&gt;
+              &lt;code&gt;
+                    &lt;![CDATA[
+						// ActionScript code goes here
+                  ]]&gt;
+              &lt;/code&gt;
+        &lt;/onEnter&gt;</p>
+<p >      &lt;onLeave&gt;
+            &lt;comment&gt;some comment here&lt;/comment&gt;<br>            &lt;code&gt;&lt;/code&gt;<br>      &lt;/onLeave&gt;</p><p >      &lt;intAct [trigger] [passValue]&gt;<br>            &lt;func name /&gt; || &lt;method instance name /&gt; || &lt;code&gt;&lt;/code&gt;
+            &lt;comment&gt;some comment here&lt;/comment&gt;<br>      &lt;/intAct&gt;</p><p >      &lt;pulseAct type interval&gt;<br>            &lt;func name /&gt; || &lt;method instance name /&gt; || &lt;code&gt;&lt;/code&gt;<br>            &lt;comment&gt;some comment here&lt;/comment&gt;<br>      &lt;/pulseAct&gt;</p><p >      &lt;transition trigger targetName [passValue] [history]&gt;<br>            &lt;local id [levels2LCA] [path2Target] /&gt;<br>            [&lt;func name /&gt; || &lt;method instance name /&gt; || &lt;code&gt;&lt;/code&gt;]<br>            &lt;comment&gt;some comment here&lt;/comment&gt;<br>      &lt;/transition&gt;
+&lt;/state&gt;</p><p >&lt;hState name&gt;<br>      &lt;local id [varName] [mgrStringName] /&gt;<br>      &lt;comment&gt;some comment here&lt;/comment&gt;
+      [ &lt;state&gt;&lt;/state&gt; | &lt;hState&gt;&lt;/hState&gt; | &lt;hStateC&gt;&lt;/hStateC&gt;]<br>&lt;/hState&gt;</p><p >&lt;hStateC name&gt;<br>      &lt;local id [varName] /&gt;
+      &lt;comment&gt;some comment here&lt;/comment&gt;<br>      &lt;subNet name&gt;<br>            &lt;local id [mgrName] /&gt;<br>            &lt;comment&gt;some comment here&lt;/comment&gt;<br>            [ &lt;state&gt;&lt;/state&gt; | &lt;hState&gt;&lt;/hState&gt; | &lt;hStateC&gt;&lt;/hStateC&gt;]+<br>      &lt;/subNet name&gt;+
+&lt;/hStateC&gt;</p>&lt;events&gt;<br>   &lt;compoundEvent name&gt;<br>      &lt;local condition=&#8221;{evID} == &#8230; {evVal} &#8230;&#8221; /&gt;
+      &lt;comment&gt;some comment here&lt;/comment&gt;
+   &lt;/compoundEvent&gt;</pre>
+<pre>   &lt;simpleEvent name&gt;
+      &lt;local condition /&gt;
+      &lt;comment&gt;some comment here&lt;/comment&gt;
+   &lt;/simpleEvent&gt;
+&lt;/events&gt;<br>
+</pre>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="2"><img src="../../_sharedassets/shim.gif" height="6" width="1"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td>
+  </tr>
+  <tr>
+    <td width="100%" align="left"></td>
+    <td><a href="FStEngOneFive_200.html"><img src="../../_sharedassets/previous.gif" alt="Previous" border="0"></a></td>
+  </tr>
+</table>
+</body>
+</html>

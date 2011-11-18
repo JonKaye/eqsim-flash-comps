@@ -1,0 +1,5 @@
+intrinsic class mx.fmxis.FMXISProxyListener extends Object {
+  public var lstner:String;
+  public var tline:MovieClip;
+  function handleEvent(ev);
+}

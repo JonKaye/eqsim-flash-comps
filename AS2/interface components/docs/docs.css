@@ -1,0 +1,142 @@
+
+.OverviewTitle,
+.PackageOverviewTitle,
+.PackageIndexTitle,
+.ClassIndexTitle {
+   font-size: medium;
+   font-weight: bold;
+}
+
+.PackageIndexClassLink,
+.PackageIndexOverviewLink,
+.PackageIndexAllLink,
+.ClassIndexClassLink,
+.ClassIndexInterfaceLink {}
+
+.ClassIndexSummariesLink 
+{
+   margin-bottom: 15px;
+}
+
+.PackageOverviewDescription,
+.PackageOverviewClassName,
+.PackageOverviewClassSummary,
+.OverviewDescription,
+.OverviewPackageName,
+.OverviewPackageSummary,
+body,
+td,
+th {
+   font-family: Verdana, Arial, Helvetica, sans-serif;   
+   font-size: small;
+}
+
+h1 {
+   font-size: medium;
+   font-weight: bold;
+}
+
+table {
+   margin-top: 30px;   
+   width: 100%;
+}
+
+.OverviewPackagesHeading,
+.PackageOverviewClassesHeading,
+.ObjectsSummaryHeading,
+.ObjectsDetailHeading {
+   font-size: medium;
+   font-weight: bold;
+   text-align: left;
+   background-color: #CCCCFF;
+}
+
+.Attributes,
+.type,
+.functionNameAndParams,
+code {
+	font-family: 'Courier New', Monospace;
+}
+
+.DetailObjectDeclaration  {
+   margin-left: 15px;
+   font-family: 'Courier New', Monospace;
+}
+
+.functionSummaryLine {
+	margin-left: 15px;
+	margin-top: 3px;
+	margin-bottom: 7px;
+}
+
+table.inheritedObjects {}
+
+th.InheritedHeading {
+   font-weight: bold;
+   text-align: left;
+   background-color: #EEEEFF;
+}
+
+.inheritedMemberList {}
+
+.DetailRow {
+   margin-top: 30px;
+   border-bottom: solid 1px #333333;
+}
+
+.DetailObjectTitle {
+   font-weight: bold;
+   margin-bottom: 10px;
+}
+
+
+.OverviewSeeAlsoTitle,
+.PackageOverviewSeeAlsoTitle,
+.DetailParamsTitle,
+.DetailsReturnsTitle,
+.DetailsExampleTitle,
+.DetailsSeeAlsoTitle {
+   font-weight: bold;
+   margin-top: 10px;
+   margin-bottom: 5px;
+   margin-left: 15px;
+}
+
+/*
+   These titles are shown inline whereas the others
+   are separate paragraphs.  Thus there's no margins.
+   */
+.PackageOverviewSinceTitle,
+.DetailsAvailabilityTitle,
+.DetailsEditionTitle,
+.DetailsSinceTitle {
+   font-weight: bold;
+}
+
+.DetailDescription {
+   margin-top: 10px;
+   margin-left: 15px;
+}
+
+
+.OverviewSeeAlsoLine,
+.PackageOverviewSeeAlsoLine,
+.DetailParamsLine,
+.DetailsReturnsLine,
+.DetailsExampleLine,
+.DetailsSeeAlsoLine {
+   margin-left: 30px;
+   margin-bottom: 5px;
+}
+
+.PackageOverviewSinceLine,
+.DetailsAvailabilityLine,
+.DetailsEditionLine,
+.DetailsSinceLine 
+{
+   font-weight: normal;
+   margin-top: 10px;
+   margin-bottom: 5px;
+   margin-left: 15px;
+}
+   

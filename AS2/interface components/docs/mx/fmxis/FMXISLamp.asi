@@ -1,0 +1,11 @@
+intrinsic class mx.fmxis.FMXISLamp extends mx.fmxis.FMXISBase {
+  var className:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get displayLamp():String;
+  public function set displayLamp(value:String);
+  public function get tint1();
+  public function set tint1(value);
+  public function get tint2();
+  public function set tint2(value);
+}

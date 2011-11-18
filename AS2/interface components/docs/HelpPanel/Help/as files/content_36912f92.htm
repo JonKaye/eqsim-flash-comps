@@ -1,0 +1,38 @@
+<html><head><title>FMXISKeypad Class</title><script language="JavaScript" src="../../_sharedassets/pages.js"></script></head><body><table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1" /></td></tr><tr><td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%" /></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="11" width="1" /></td></tr></table><h1>FMXISKeypad Class</h1><p><strong>Inheritance </strong>
+			
+			&gt;
+			
+		<a href="content_f574e305.htm">FMXISBase</a>
+			
+			&gt;
+			
+		<a href="content_36912f92.htm">FMXISKeypad</a></p><p><strong>ActionScript Class Name</strong> mx.fmxis.FMXISKeypad</p><p><p>This class implements a keyboard arranged in a grid.  Users can change the
+appearance of buttons by changing the following graphics:</p>
+<li><code>defKeypadKey</code> - graphic for keys in up and down positions</li>
+<li><code>defKeypadCharsUp</code> - ggraphic overlay for keys in up position</li>
+<li><code>defKeypadCharsDown</code> - ggraphic overlay for keys in down position</li>
+</p><p>
+<p>The class has the following events:</p>
+<li><code>onKeyUp</code> Key pressed.  Value is object with properties <code>num</code> (index) and <code>char</code> (string character)</li>
+<li><code>onKeyDown</code> Key released.  Value is same as onKeyUp</li>
+</p><p>
+<p>Key-down (<code>onKeyDown</code>, unless changed by the developer)
+repeats at <code>repFreq</code> frequency when a key is held down longer than <code>holdDur</code> milliseconds.
+Unlike a physical
+keyboard, it also allows
+you to show an offset of the overlay clips (the key labels) instead of all at once.  This
+can be used to simulate a series of keys whose labels change.</p>
+</p><p>
+<p>If you have set a non-zero offset, then the number returned in the event still corresponds to
+the row and column position (0 is first), but the component returns the character from
+the character array respecting the offset.</p>
+</p><p>
+<p>This class inherits from FMXISBase to get listener capabilities.</p></p><h3>
+					Method summary for the FMXISKeypad Class</h3><table border="0" cellpadding="0" cellspacing="0"><tr><th><p>Method </p></th><th><p>Description </p></th></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_5ec0dd8b.htm"><code>FMXISKeypad.execEvent()</code></a></p></td><td><p>Given an event string and value that matches what this component would generate, perform the action.</p></td></tr><tr><td valign="top"><p><a href="content_b3f3df2c.htm"><code>FMXISKeypad.pressKey()</code></a></p></td><td><p>Simulate the pressing of key <code>knum</code>.</p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_0ec755a2.htm"><code>FMXISKeypad.releaseKey()</code></a></p></td><td><p>Simulate the releasing of key <code>knum</code>.</p></td></tr><tr><td valign="top"><p><a href="content_461d97d3.htm"><code>FMXISKeypad.resetKeysToUp()</code></a></p></td><td><p></p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_8ef0f446.htm"><code>FMXISKeypad.setGrid()</code></a></p></td><td><p>This method is for resetting the grid at runtime to a new grid configuration.</p></td></tr></table><h3>
+					Property summary for the FMXISKeypad Class</h3><table border="0" cellpadding="0" cellspacing="0"><tr><th><p>Property </p></th><th><p>Description </p></th></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_530ed310.htm"><code>FMXISKeypad._cols</code></a></p></td><td><p>Number of columns of keys.</p></td></tr><tr><td valign="top"><p><a href="content_531b5d1a.htm"><code>FMXISKeypad._rows</code></a></p></td><td><p>Number of rows of keys.</p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_826de7f5.htm"><code>FMXISKeypad.className</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_ff0897de.htm"><code>FMXISKeypad.evtKeyDown</code></a></p></td><td><p>Name of the on-key-down event sent to listeners when a key is pressed and when it is repeated.</p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_2f03c6c9.htm"><code>FMXISKeypad.evtKeyUp</code></a></p></td><td><p>Name of the on-key-up event sent to listeners when a key is released.</p></td></tr><tr><td valign="top"><p><a href="content_ea562b30.htm"><code>FMXISKeypad.holdDur</code></a></p></td><td><p># of milliseconds after which we repeat key down events.</p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_dc188b54.htm"><code>FMXISKeypad.keyEvents</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_badf6d06.htm"><code>FMXISKeypad.keyOffset</code></a></p></td><td><p>Which index should be first displayed in series stored in Up and Down Chars
+movie clips</p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_e4b3eefb.htm"><code>FMXISKeypad.repFreq</code></a></p></td><td><p># of millisconds to repeat onKeyDown's, after key has been down <code>holdDur</code>
+(so long as <code>holdDur</code> is not -1).</p></td></tr><tr><td valign="top"><p><a href="content_d1bd405c.htm"><code>FMXISKeypad.showHand</code></a></p></td><td><p>Boolean property indicating whether or not to display the hand cursor when the cursor is
+over the hit area of a key.</p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_d0df0edd.htm"><code>FMXISKeypad.symbolName</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_eca50f9b.htm"><code>FMXISKeypad.symbolOwner</code></a></p></td><td><p></p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_e2c68925.htm"><code>FMXISKeypad.xSpacing</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_3975e484.htm"><code>FMXISKeypad.ySpacing</code></a></p></td><td><p></p></td></tr></table><h3>
+					Event summary for the FMXISKeypad Class</h3><table border="0" cellpadding="0" cellspacing="0"><tr><th><p>Event </p></th><th><p>Description </p></th></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_61af4f58.htm"><code>FMXISKeypad.onKeyDown</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_eaeec5cf.htm"><code>FMXISKeypad.onKeyUp</code></a></p></td><td><p><p>Event generated when user presses a key, and repeatedly if the key is held down for longer
+than <code>holdDur</code> milliseconds (repeated at <code>repFreq</code> millisecond frequency).</p>
+<p>The event value is an object with properties <code>num</code> (index) and <code>char</code> (string character).</p></td></tr></table><table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="6" width="1" /></td></tr><tr><td colspan="2"><img src="_sharedassets/pixel.gif" height="1" width="100%" /></td></tr><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="4" width="1" /></td></tr></table><br /><br /><hr /><span style='font-size: x-small; font-family: Verdana, Arial'>Documentation generated by <a href='http://wwww.blinex.com/products/bldoc' target='_blank' alt='BLDoc Link'>BLDoc Community Edition</a> from <a href='http://www.blinex.com' target='_blank' alt='B-Line Express Website'>B-Line Express</a>.</body></html>

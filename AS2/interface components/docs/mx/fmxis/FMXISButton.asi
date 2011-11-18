@@ -1,0 +1,21 @@
+intrinsic class mx.fmxis.FMXISButton extends mx.fmxis.FMXISBase {
+  static var buttonEvents:Array;
+  var className:String;
+  public var evtDragOut:String;
+  public var evtPress:String;
+  public var evtRelease:String;
+  public var evtReleaseOutside:String;
+  public var evtRollOut:String;
+  public var evtRollOver:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get showHand();
+  public function set showHand(value);
+  function execEvent(evtName, evtVal, q);
+  function onDragOut(q);
+  function onPress(q:Boolean);
+  function onRelease(q);
+  function onReleaseOutside(q);
+  function onRollOut(q);
+  function onRollOver(q);
+}

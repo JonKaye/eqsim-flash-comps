@@ -1,0 +1,21 @@
+intrinsic class mx.fmxis.FMXISDigits extends mx.fmxis.FMXISBase {
+  var className:String;
+  static var digEvents:Array;
+  public var evtOverflow:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get decPl();
+  public function set decPl(value);
+  public function get digTint();
+  public function set digTint(value);
+  public function get display();
+  public function set display(value);
+  public function get leadZero();
+  public function set leadZero(value);
+  public function get numDigs();
+  public function set numDigs(value);
+  public function get showBkgnd();
+  public function set showBkgnd(value);
+  public function get val();
+  public function set val(value);
+}

@@ -1,0 +1,10 @@
+intrinsic class mx.fmxis.FMXISLampAttach extends mx.fmxis.FMXISBase {
+  var className:String;
+  public var lampBackID:String;
+  public var linkageIDs:Array;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get displayLamp():Number;
+  public function set displayLamp(value:Number);
+  function FMXISLamp();
+}

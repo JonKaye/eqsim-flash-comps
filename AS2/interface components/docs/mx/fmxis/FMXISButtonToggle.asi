@@ -1,0 +1,11 @@
+intrinsic class mx.fmxis.FMXISButtonToggle extends mx.fmxis.FMXISBase {
+  static var buttonEvents:Array;
+  var className:String;
+  public var evtSet:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get butIsUp();
+  public function set butIsUp(value);
+  function execEvent(evtName, evtVal, q);
+  function onPress(q:Boolean);
+}

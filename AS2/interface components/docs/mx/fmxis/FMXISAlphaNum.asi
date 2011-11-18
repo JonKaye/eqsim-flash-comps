@@ -1,0 +1,11 @@
+intrinsic class mx.fmxis.FMXISAlphaNum extends mx.fmxis.FMXISDigits {
+  var className:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get leftJust();
+  public function set leftJust(value);
+  public function get numDigs();
+  public function set numDigs(value);
+  public function get val();
+  public function set val(value);
+}

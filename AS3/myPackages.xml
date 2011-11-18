@@ -1,0 +1,45 @@
+<overviews> 
+    <packages> 
+        <package name="com.eqsim.components"> 
+            <shortDescription> 
+                <![CDATA[ 
+                    The &lt;b&gt;components package&lt;/b&gt; contains the 
+                    equipment interface component classes. 
+                ]]> 
+            </shortDescription> 
+            <description> 
+                <![CDATA[ 
+                    The classes in this package contain common equipment interface components, such as buttons, knobs, gauges, sliders, etc.  In our AS2 version,
+					we also implemented a keypad, a digital bar, a joystick, and an event recorder/playback mechanism.  Please contact us if you need any of those
+					components, and we can discuss adding them to this set.
+                ]]> 
+            </description> 
+        </package> 
+        <package name="com.eqsim.events"> 
+            <shortDescription> 
+                <![CDATA[ 
+                    The &lt;b&gt;events package&lt;/b&gt; contains common custom Events.
+                ]]> 
+            </shortDescription> 
+            <description> 
+                <![CDATA[ 
+                    This package contains custom Events that are used across the <code>com.eqsim</code> libraries. 
+                ]]> 
+            </description> 
+        </package>
+	<package name="com.eqsim.FStEng"> 
+            <shortDescription> 
+                <![CDATA[ 
+                    The &lt;b&gt;FStEng package&lt;/b&gt; contains the hierarchical state engine classes.
+                ]]> 
+            </shortDescription> 
+            <description> 
+                <![CDATA[ 
+                    This package contains the classes for implementing finite-state machines and hierarchical state machines.  For more information about
+					the state engine, please see our AS1, AS2, and AS3 releases at http://code.google.com/p/flash-state-engine/.  The code in this package duplicates
+					the former code, but puts in in the <code>com.eqsim</code> package, instead of <code>com.flashsim</code>.
+                ]]> 
+            </description> 
+        </package> 		
+    </packages> 
+</overviews>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BLDoc version="0.3">
+  <Source>C:\Documents and Settings\All Users\Documents\Toreador\fmxis\as files</Source>
+  <Out>C:\Documents and Settings\All Users\Documents\Toreador\fmxis\as files\output</Out>
+  <Style>Flash</Style>
+  <Options>
+    <CollapseObjects>false</CollapseObjects>
+    <Preview>true</Preview>
+  </Options>
+  <MergeProject src="{Style}/default.bld" />
+</BLDoc>

@@ -1,0 +1,7 @@
+intrinsic class mx.fmxis.FMXISBarNonUnif extends mx.fmxis.FMXISBar {
+  var className:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get chipUnits();
+  public function set chipUnits(value);
+}

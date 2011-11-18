@@ -1,0 +1,32 @@
+intrinsic class mx.fmxis.FMXISJoystick extends mx.fmxis.FMXISBase {
+  public var _pulseFreq:Number;
+  public var _pulseID:Number;
+  public var baseID:String;
+  var className:String;
+  public var evtJChg:String;
+  public var evtJPulse:String;
+  public var evtJReleased:String;
+  public var evtJReturned:String;
+  public var evtJStart:String;
+  public var forceInt:Boolean;
+  public var hsID:String;
+  static var jstickEvents:Array;
+  public var stickID:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get centerEPS();
+  public function set centerEPS(value);
+  public function get kSticky();
+  public function set kSticky(value);
+  public function get maxVal();
+  public function set maxVal(value);
+  public function get pulseFreq();
+  public function set pulseFreq(value);
+  public function get showHand();
+  public function set showHand(value);
+  function execEvent(evtName, evtVal, q);
+  public function getVec();
+  public function moveHS(noMouse, q);
+  public function setVec(x, y);
+  function stopMoveHS(noMouse, quiet);
+}

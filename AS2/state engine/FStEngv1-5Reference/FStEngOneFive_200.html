@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>RTVis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="../../_sharedassets/pages.js"></script>
+</head>
+<body>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td align="left"><div align="right"></div></td>
+    <td><div align="right"><a href="FStEngOneFive_87.html"><img src="../../_sharedassets/previous.gif" alt="Previous" border="0"></a><img src="../../_sharedassets/shim.gif" width="10"  height="1"><a href="FStEngOneFive_300.html"><img src="../../_sharedassets/next.gif" alt="Next" border="0"></a></div></td>
+  </tr>
+  <tr> 
+    <td width="100%" colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td>
+  </tr>
+  <tr> 
+    <td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td>
+  </tr>
+  <tr> 
+    <td colspan="2"><img src="../../_sharedassets/shim.gif" height="11" width="1"></td>
+  </tr>
+</table>
+<h1>RTVis</h1>
+<p>This component is a tool for watching the run-time behavior of a state machine, 
+  and is provided with the distribution. By default, it appears in the Components 
+  panel under the folder &quot;FStEng Debbugging Tools&quot;. The tool allows 
+  you to see the structure of a state machine while your movie is running. States 
+  and managers that are active are colored in green. In the following image, the 
+  tool is located on the right hand side.</p>
+<table width="600" border="0">
+  <tr>
+    <td><img src="rtvispic.jpg" width="600" height="381"></td>
+  </tr>
+</table>
+<p>As your simulation runs, the tool updates itself with the current managers 
+  and states. If you click on a state or manager pictured, the tool displays information 
+  about that object, such as name, ID, and other characteristics, on the right 
+  hand side. The symbols in the tree have the following meaning:</p>
+<table width="300" border="1">
+  <tr bgcolor="#CCCCCC"> 
+    <td width="128"> 
+      <div align="center"><strong>Type</strong></div></td>
+    <td width="80"> 
+      <div align="center"><strong>Active</strong></div></td>
+    <td width="78"> 
+      <div align="center"><strong>Inactive</strong></div></td>
+  </tr>
+  <tr> 
+    <td><font face="Courier New, Courier, mono">state</font></td>
+    <td><div align="center"><img src="stateActive.jpg" width="29" height="29"></div></td>
+    <td><div align="center"><img src="state.jpg" width="29" height="29"></div></td>
+  </tr>
+  <tr> 
+    <td><font face="Courier New, Courier, mono">hState</font></td>
+    <td><div align="center"><img src="hStateActive.jpg" width="29" height="29"></div></td>
+    <td><div align="center"><img src="hState.jpg" width="29" height="29"></div></td>
+  </tr>
+  <tr> 
+    <td><font face="Courier New, Courier, mono">hStateC</font></td>
+    <td><div align="center"><img src="hStateCActive.jpg" width="29" height="28"></div></td>
+    <td><div align="center"><img src="hStateC.jpg" width="29" height="29"></div></td>
+  </tr>
+  <tr> 
+    <td><font face="Courier New, Courier, mono">stateMgr</font></td>
+    <td><div align="center"><img src="mgrActive.jpg" width="27" height="29"></div></td>
+    <td><div align="center"><img src="mgr.jpg" width="27" height="29"></div></td>
+  </tr>
+</table>
+<h4>Usage</h4>
+<p>Open the <font face="Courier New, Courier, mono">Component</font> panel (<font face="Courier New, Courier, mono">Window 
+  &gt; Development Panels &gt; Components</font>), find and Open the <font face="Courier New, Courier, mono">FStEng 
+  Debugging Tools</font> folder, and drop the <font face="Courier New, Courier, mono">RTVis</font> 
+  component onto the Stage. The actual placement is irrelevant--the tool uses 
+  the PopUp manager to open a window above content on the screen. Test your movie 
+  as normal.</p>
+<p>When you want to see the run-time behavior of your simulation, enter the path 
+  from <font face="Courier New, Courier, mono">_root</font> to the clip and instance 
+  name of your <font face="Courier New, Courier, mono">stateEngine</font>, then 
+  press <strong>Load Engine</strong>. The tool will read the structure from the 
+  given <font face="Courier New, Courier, mono">stateEngine</font>, or tell you 
+  &quot;Not Found / Re-enter&quot; if it cannot find the instance (remember to 
+  use the instance name, not the state engine name).</p>
+<p>Use your simulation as you would normally, and watch the current states and 
+  managers change as your simulation proceeds. Click the down arrow on the left 
+  of an <font face="Courier New, Courier, mono">hState</font>, <font face="Courier New, Courier, mono">hStateC</font>, 
+  or <font face="Courier New, Courier, mono">stateMgr</font> to open that branch 
+  and inspect the sub-network. Click on those objects when the branch is open 
+  to hide the branch. Click on any state or manager in the tree view to inspect 
+  values related to that object.</p>
+<h4>After Debugging</h4>
+<p>When you have finished using <font face="Courier New, Courier, mono">RTVis</font> 
+  and are ready for production, remove <font face="Courier New, Courier, mono">RTVis</font> 
+  from the Stage, and delete it from your Library. You can always put it back 
+  if you need further debugging, but this process makes sure you don't have unnecessary 
+  symbols loaded before the first frame.</p>
+<h4>Most Common Problem</h4>
+<p>If your simulation is not working as you expect, the most common problem we 
+  have encountered is that we erroneously defined enter or leave actions overriding 
+  the <font face="Courier New, Courier, mono">enter</font> or <font face="Courier New, Courier, mono">leave</font> 
+  method (these are internal routines not to be touched), instead of the correct 
+  <font face="Courier New, Courier, mono">entActs</font> and <font face="Courier New, Courier, mono">lvActs</font>, 
+  respectively. If this is not the problem, check the case of <font face="Courier New, Courier, mono">entActs</font> 
+  and <font face="Courier New, Courier, mono">lvActs</font>, because Flash will 
+  not warn you about improper case (AS 2.0 is case sensitive), and will ignore 
+  your actions, unless you define your state variables as type <font face="Courier New, Courier, mono">state</font> 
+  (or <font face="Courier New, Courier, mono">hState</font>, or <font face="Courier New, Courier, mono">hStateC</font>)--in 
+  which case Flash will signal a compile error if <font face="Courier New, Courier, mono">entActs</font> 
+  or <font face="Courier New, Courier, mono">lvActs</font> are improperly spelled. 
+</p>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="100%" colspan="2"><img src="../../_sharedassets/shim.gif" height="6" width="1"></td>
+  </tr>
+  <tr> 
+    <td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td>
+  </tr>
+  <tr> 
+    <td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td>
+  </tr>
+  <tr> 
+    <td align="left"><div align="right"></div></td>
+    <td><div align="right"><a href="FStEngOneFive_87.html"><img src="../../_sharedassets/previous.gif" alt="Previous" border="0"></a><img src="../../_sharedassets/shim.gif" width="10"  height="1"><a href="FStEngOneFive_300.html"><img src="../../_sharedassets/next.gif" alt="Next" border="0"></a></div></td>
+  </tr>
+</table>
+</body>
+</html>

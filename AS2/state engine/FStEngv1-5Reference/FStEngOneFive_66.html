@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>stateEngine</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="../../_sharedassets/pages.js"></script>
+</head>
+<body>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="100%" align="left"></td><td><a href="FStEngOneFive_65.html"><img src="../../_sharedassets/previous.gif" alt="Previous"></a><img src="../../_sharedassets/shim.gif" width="10"  height="1"><a href="FStEngOneFive_67.html"><img src="../../_sharedassets/next.gif" alt="Next"></a></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="11" width="1"></td></tr></table>
+<h1>stateEngine</h1>
+<h4>Description</h4>
+<p>The <font face="Courier New, Courier, mono">stateEngine</font> is the main 
+  data structure for the hierarchical state machine. It contains the hierarchical 
+  state network, and a series of methods to handle events and requests. There 
+  is a basic conceptual division between elements that this state machine controls, 
+  referred to as 'internal', and those outside the scope of manipulation (called 
+  'external'). For example, the internal events are handled by the internal event 
+  handler, <font face="Courier New, Courier, mono">ieh</font>. The external events 
+  are handled by the external event handler, <font face="Courier New, Courier, mono">xeh</font>. 
+  Internal requests (messages that require an immediate response) are handled 
+  by the internal request handler, <font face="Courier New, Courier, mono">irh</font>. 
+  External requests are handled by the external request handler, <font face="Courier New, Courier, mono">xrh</font>.</p>
+<p>The 'oracle' mechanism (see ask<font face="Courier New, Courier, mono">Oracle()</font> 
+  and <font face="Courier New, Courier, mono">setOracle()</font>) is a protocol 
+  for communicating with a designated other object that can fill information requests 
+  for this state machine. For example, a state machine might represent a device 
+  interface, and it needs a source of information to get system values. The object 
+  representing the system registers itself as the oracle of the interface state 
+  machine. When the interface needs information it cannot determine on its own, 
+  the developer place calls to <font face="Courier New, Courier, mono">askOracle()</font>.</p>
+<p>In the course of the state machine activity, there are usually several points 
+  at which the machine needs to alert other objects in the environment about some 
+  meaningful event that has occurred in the state machine process. The developer 
+  uses <font face="Courier New, Courier, mono">notifyListener()</font> to generate 
+  those events. Other objects can register to listen for all events generated 
+  by this machine by using <font face="Courier New, Courier, mono">addListener()</font>. 
+  There can be a theoretically unlimited number of listeners, but only one oracle 
+  (since the oracle has to be uniquely determined to be the information source).</p>
+<p><strong>Note: </strong>In version 1.5, we replaced the manual coding of the 
+  internal event handler with an automatic mechanism. External event, internal 
+  request, and external request handlers still must be coded manually.</p>
+<h4>Usage</h4>
+<pre><i>new stateEngine(machineName, ID, timeline, triggerTable);</i>
+</pre>
+<h4>Parameters</h4>
+<p><i>machineName</i> String name of this statechart</p>
+<p><i>ID</i> Identifier for this statechart</p>
+<p><i>timeline </i>Pointer to the timeline or context on which the engine resides</p>
+<p><i>triggerTable </i>Pointer to a trigger table (<font face="Courier New, Courier, mono">triggerTable</font>) 
+  for this engine</p>
+<h4>Example</h4>
+<pre>
+myStEng = new stateEngine("state engine name", 0, this, { /*<ci> ... name-function pairs for trigger table ... */</ci> });
+</pre>
+<h4>Code Hint</h4>
+<p>Variable names with the suffix &quot;_se&quot; are recognized for the sake 
+  of codehinting, as state engines.</p>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="6" width="1"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td width="100%" align="left"></td><td><a href="FStEngOneFive_65.html"><img src="../../_sharedassets/previous.gif" alt="Previous"></a><img src="../../_sharedassets/shim.gif" width="10" height="1"><a href="FStEngOneFive_67.html"><img src="../../_sharedassets/next.gif" alt="Next"></a></td></tr></table>
+</body>
+</html>

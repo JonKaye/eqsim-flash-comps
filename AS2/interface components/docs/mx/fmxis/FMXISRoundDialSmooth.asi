@@ -1,0 +1,10 @@
+intrinsic class mx.fmxis.FMXISRoundDialSmooth extends mx.fmxis.FMXISRoundDial {
+  var className:String;
+  static var dialEvents:Array;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get targVal():Number;
+  public function set targVal(value:Number);
+  public function set val(value:Number);
+  function setTargVal(v);
+}

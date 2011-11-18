@@ -1,0 +1,26 @@
+intrinsic class mx.fmxis.FMXISSectorDial extends mx.fmxis.FMXISBase {
+  var className:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get centerVis();
+  public function set centerVis(value);
+  public function get left2right();
+  public function set left2right(value);
+  public function get maxAngle():Number;
+  public function set maxAngle(value:Number);
+  public function get maxVal():Number;
+  public function set maxVal(value:Number);
+  public function get minAngle():Number;
+  public function set minAngle(value:Number);
+  public function get minVal():Number;
+  public function set minVal(value:Number);
+  public function get nXScale();
+  public function set nXScale(value);
+  public function get nYScale();
+  public function set nYScale(value);
+  public function get showBack();
+  public function set showBack(value);
+  public function get val():Number;
+  public function set val(value:Number);
+  function attachChildren();
+}

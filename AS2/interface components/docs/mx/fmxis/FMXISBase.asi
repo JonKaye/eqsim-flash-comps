@@ -1,0 +1,11 @@
+intrinsic class mx.fmxis.FMXISBase extends mx.core.UIComponent {
+  public var addEventListener:Function;
+  var className:String;
+  var clipParameters:Object;
+  public var removeEventListener:Function;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function addListener(lstnr);
+  function init(evts);
+  public function removeListener(lstnr);
+}

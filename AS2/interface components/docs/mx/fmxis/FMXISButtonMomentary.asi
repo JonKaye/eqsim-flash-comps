@@ -1,0 +1,11 @@
+intrinsic class mx.fmxis.FMXISButtonMomentary extends mx.fmxis.FMXISButtonRepeater {
+  var className:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get DownLinkID():String;
+  public function set DownLinkID(value:String);
+  public function get UpLinkID():String;
+  public function set UpLinkID(value:String);
+  function setDownTile(id);
+  function setUpTile(id);
+}

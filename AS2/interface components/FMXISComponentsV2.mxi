@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<macromedia-extension name="FMXIS Interface Library" version="2.0" type="flash component" requires-restart="false">
+
+	<!-- Describe the extension -->
+
+	<license-agreement>
+		<![CDATA[The components extend Macromedia's version 2 architecture UIComponent, and hence any modifications to those files are dictated by Macromedia's End User License Agreement (EULA).  The FMXIS Interface Library is licensed on a per developer basis, for both commercial and non-commercial use.  Copyright 2002-2004, Amethyst Interactive LLC, all rights reserved.]]>
+	</license-agreement>
+
+	<!-- Describe the author -->
+
+	<author name="Jonathan Kaye" />
+
+	<!-- List the required/compatible products -->
+
+	<products>
+		<product name="Flash" version="7" primary="true" />
+	</products>
+
+	<!-- Describe the extension -->
+
+	<description>
+		<![CDATA[The FMXIS Interface Component Library is a collection of visual and non-visual interface elements commonly found on equipment, for example, knobs, gauges, buttons, etc. The original library was developed for the book, "Flash MX for Interactive Simulation: How to Construct and Use Device Simulations" (Delmar Thomson Learning, November, 2002). For more information about this component set, see www.FlashSim.com.]]>
+	</description>
+
+	<!-- Describe where the extension shows in the UI of the product -->
+
+	<ui-access>
+		<![CDATA[The components are installed as FLA's in the Components > FMXIS Components folder of the Components panel.]]>
+	</ui-access>
+
+	<!-- Describe the files that comprise the extension -->
+
+	<files>
+		<file name="XMLHelp/FMXISAll.xml" destination="$flash/ActionsPanel/CustomActions//" />
+		<file name="FMXISKnobs.fla" destination="$flash/Components/FMXIS Components/" />
+		<file name="FMXISButtons.fla" destination="$flash/Components/FMXIS Components/" />
+		<file name="FMXISJoystick.fla" destination="$flash/Components/FMXIS Components/" />
+		<file name="FMXISTimers.fla" destination="$flash/Components/FMXIS Components/" />
+		<file name="FMXISKeypad.fla" destination="$flash/Components/FMXIS Components/" />
+		<file name="FMXISGauges.fla" destination="$flash/Components/FMXIS Components/" />
+		<file name="FMXISSlider.fla" destination="$flash/Components/FMXIS Components/" />
+		<file name="FMXISDisplays.fla" destination="$flash/Components/FMXIS Components/" />
+		<file name="FMXISBar.swc" destination="$flash/Components/FMXIS Components/" />
+		<file name="FMXISBarNonUnif.swc" destination="$flash/Components/FMXIS Components/" />
+		<file name="FMXISBarNonUnifExcl.swc" destination="$flash/Components/FMXIS Components/" />
+		<file name="FMXISEventRecorder.swc" destination="$flash/Components/FMXIS Components/" />
+		<file name="FMXIS3Switch.swc" destination="$flash/Components/FMXIS Components/" />
+		<file name="ASFiles/FMXISAlphaNum.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISBar.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISBarNonUnif.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISBarNonUnifExcl.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXIS3Switch.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISBarrelDial.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISBase.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISButton.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISButtonRepeater.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISButtonMomentary.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISButtonMomentaryLabel.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISButtonToggle.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISDigits.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISJog.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISJoystick.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISKeypad.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISLamp.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISLampAttach.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISPotentiometer.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISProxyListener.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISRoundDial.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISRoundDialSmooth.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISSectorDial.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISSectorDialSmooth.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISSlider.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISStopwatch.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="ASFiles/FMXISTimer.as" destination="$flash/Classes/mx/fmxis/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_1.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_11.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_2.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_3.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_4.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_5.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_6.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_7.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_8.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_9.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_10.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_11.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_12.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_13.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_14.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_15.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_16.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_17.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_19.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_21.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_22.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_23.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_24.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_26.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_27.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_28.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_29.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_30.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_31.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_32.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_33.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_34.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_35.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_36.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_37.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_66.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_67.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_68.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_69.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_70.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_71.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_72.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_73.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_74.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_75.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_76.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_77.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_78.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_79.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_80.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_82.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_83.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_84.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_85.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_86.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_87.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_88.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_89.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_90.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_91.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_92.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_93.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_184.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_94.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_95.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_96.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_97.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_128.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_129.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_130.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_131.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_132.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_133.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_134.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_135.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_136.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_137.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_138.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_139.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_142.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_143.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_144.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_145.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_146.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_147.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_148.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_149.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_150.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_151.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_152.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_153.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_154.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_155.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_156.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_157.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_158.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_159.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_160.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_161.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_162.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_163.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_164.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_165.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_166.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_167.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_168.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_169.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_170.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_171.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_172.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_173.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_174.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_175.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_176.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_177.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_178.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_179.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_180.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_181.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_182.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_183.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_230.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_185.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_186.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_187.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_188.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_189.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_190.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_191.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_192.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_193.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_194.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_195.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_196.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_197.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_198.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_199.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_200.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_201.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_202.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_203.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_204.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_205.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_206.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_207.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_208.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_209.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_210.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_211.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_212.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_213.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_214.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_215.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_216.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_217.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_218.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_219.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_220.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_221.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_222.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_223.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_224.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_225.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_226.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_227.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_228.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_229.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_275.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_231.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_232.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_233.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_234.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_235.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_236.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_237.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_238.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_239.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_240.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_241.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_242.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_243.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_244.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_245.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_246.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_247.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_248.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_249.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_250.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_251.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_252.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_253.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_254.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_255.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_256.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_257.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_258.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_259.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_260.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_261.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_262.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_263.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_264.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_265.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_266.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_267.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_268.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_269.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_270.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_271.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_272.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_273.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_274.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_320.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_276.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_277.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_278.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_279.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_280.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_281.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_282.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_283.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_284.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_285.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_286.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_287.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_288.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_289.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_290.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_291.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_292.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_293.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_294.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_295.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_296.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_297.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_298.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_299.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_300.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_301.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_302.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_303.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_304.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_305.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_306.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_307.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_308.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_309.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_310.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_311.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_312.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_313.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_314.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_315.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_316.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_317.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_318.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_319.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_365.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_321.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_322.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_323.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_324.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_325.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_326.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_327.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_328.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_329.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_330.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_331.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_332.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_333.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_334.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_335.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_336.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_337.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_338.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_339.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_340.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_341.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_342.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_343.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_344.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_345.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_346.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_347.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_348.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_349.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_350.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_351.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_352.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_353.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_354.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_355.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_356.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_357.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_358.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_359.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_360.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_361.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_362.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_363.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_364.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/rotLogo.swf" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_366.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_367.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_368.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_369.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_370.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_371.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_372.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_373.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_374.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_375.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_376.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_377.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_378.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_379.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_380.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_381.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_382.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_383.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_384.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_385.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_386.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_387.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_388.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_389.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_390.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_391.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_392.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_451.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_452.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_453.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_454.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_455.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_456.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_457.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_458.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_461.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_462.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_463.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_464.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_465.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_467.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_468.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_471.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_472.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_473.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_474.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_475.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_476.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_477.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_478.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_500.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/help_search_index.xml" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/help_toc.xml" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_20.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_400.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_401.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_402.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_403.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_405.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_406.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_602.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_603.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_604.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_605.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_606.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_607.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_700.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_701.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_702.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_800.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_801.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_802.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_803.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_804.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_501.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_502.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_502a.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_502b.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_503.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_504.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_505.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_506.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_507.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_508.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_509.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_510.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_511.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_512.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_513.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_514.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_515.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_516.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_517.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_650.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_600.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_601.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_675.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_676.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_677.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_678.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_679.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_680.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_681.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_682.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_683.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_684.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_685.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_686.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_687.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_688.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_689.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/FMXISAll_690.html" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/pauseBut.jpg" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/playBut.jpg" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/recBut.jpg" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/rewBut.jpg" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/stopBut.jpg" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		<file name="XMLHelp/html/FMXISInterfaceCompRef/evRecPan.jpg" destination="$flash/HelpPanel/Help/FMXISInterfaceCompRef/" />
+		</files>
+
+</macromedia-extension>

@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>Overview</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="../../_sharedassets/pages.js"></script>
+</head>
+<body>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="100%" align="left"></td>
+    <td><img src="../../_sharedassets/shim.gif" width="10"  height="1"><a href="FStEngOneFive_1.html"><img src="../../_sharedassets/next.gif" alt="Next" border="0"></a></td>
+  </tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="11" width="1"></td></tr></table>
+<table width="160" border="0" align="right">
+  <tr>
+    <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="160" height="160">
+        <param name="movie" value="rotLogo.swf">
+        <param name="quality" value="high">
+        <embed src="rotLogo.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="160" height="160"></embed></object></td>
+  </tr>
+</table>
+<h1>FStEng Version 1.5</h1>
+<h4>Availability</h4>
+<p>Flash Player 6 r65</p>
+<h4>Description</h4>
+<p>The Flash State Engine comprises a collection of classes used to implement 
+  statecharts in Flash 5, MX, and MX 2004. Statecharts are useful abstractions 
+  for describing processes with discrete and hybrid behavior. The notation is 
+  simple enough to be learned quickly, but powerful and precise enough to scale 
+  and maintain easily. Our implementation is not a full scale equivalent of the 
+  UML Statechart specification, nor is it completely consistent (particularly 
+  related to the run-to-completion specification for events) but it provides enough 
+  functionality to perform a great variety of tasks. In particular, our implementation 
+  supports simple states (<font face="Courier New, Courier, mono">state</font>) 
+  hierarchical (nested) states (<font face="Courier New, Courier, mono">hState</font>), 
+  concurrent hierarchical states (<font face="Courier New, Courier, mono">hStateC</font>), 
+  a shallow history mechanism, enter/leave/internal actions, activities, and other 
+  features. If you find you need more complexity, we invite you to add it yourself 
+  and share it with the community!</p>
+<p>At the core is the <font face="Courier New, Courier, mono">stateEngine</font> 
+  class, used to create the framework that embeds a hierarchical state network. 
+  The state engine communicates with outside objects through an event/listener 
+  mechanism. </p>
+<table width="413" border="1">
+  <tr> 
+    <td width="131"><font face="Courier New, Courier, mono"><a href="FStEngOneFive_66.html">stateEngine</a></font></td>
+    <td width="266">The foundation class</td>
+  </tr>
+  <tr> 
+    <td><font face="Courier New, Courier, mono"><a href="FStEngOneFive_45.html">state</a></font></td>
+    <td>Simple states</td>
+  </tr>
+  <tr> 
+    <td><font face="Courier New, Courier, mono"><a href="FStEngOneFive_1.html">hState</a></font></td>
+    <td>Hierarchical states</td>
+  </tr>
+  <tr> 
+    <td><font face="Courier New, Courier, mono"><a href="FStEngOneFive_22.html">hStateC</a></font></td>
+    <td>Concurrent hierarchical states</td>
+  </tr>
+  <tr> 
+    <td><font face="Courier New, Courier, mono"><a href="FStEngOneFive_84.html">stateMgr</a></font></td>
+    <td>Run-time manager for state networks</td>
+  </tr>
+  <tr> 
+    <td><font face="Courier New, Courier, mono"><a href="FStEngOneFive_101.html">trans</a></font></td>
+    <td>Simple transitions</td>
+  </tr>
+  <tr> 
+    <td><font face="Courier New, Courier, mono"><a href="FStEngOneFive_86.html">transLvl</a></font></td>
+    <td>Transitions that cross multiple state networks</td>
+  </tr>
+  <tr>
+    <td><a href="FStEngOneFive_200.html">RTVis</a></td>
+    <td>A run-time visualization tool useful for watching the current states during 
+      simulation execution</td>
+  </tr>
+</table>
+<p>Version 1.5 extends the original version developed for the book, &quot;<a href="http://www.FlashSim.com" target="_blank">Flash 
+  MX for Interactive Simulation</a>,&quot; by Jonathan Kaye and David Castillo 
+  (published by Delmar Thomson Learning, November 2002). In previous versions, 
+  developers had to code the event handling manually. In version 1.5, we have 
+  created a layer on top of the original implementation that makes the event handling 
+  more intuitive. For example, when you want to create an internal action for 
+  a state triggered by some event, rather than coding the trigger in a global 
+  event handler (as in version 1.0), you simply write the handler as a method 
+  of the state, as in <font face="Courier New, Courier, mono">myState.onButtonPress 
+  = function ()</font> ...</p>
+<h4>More Information</h4>
+<p>For more information and tools and training to assist with state engine development, 
+  please visit <a href="http://www.FlashSim.com" target="_blank">www.FlashSim.com</a>.</p>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="6" width="1"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td width="100%" align="left"></td>
+    <td><img src="../../_sharedassets/shim.gif" width="10" height="1"><a href="FStEngOneFive_1.html"><img src="../../_sharedassets/next.gif" alt="Next" border="0"></a></td>
+  </tr></table>
+</body>
+</html>

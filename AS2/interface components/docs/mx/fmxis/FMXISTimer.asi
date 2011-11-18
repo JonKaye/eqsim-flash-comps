@@ -1,0 +1,13 @@
+intrinsic class mx.fmxis.FMXISTimer extends mx.fmxis.FMXISBase {
+  static var buttonEvents:Array;
+  var className:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get intvl();
+  public function set intvl(value);
+  public function get nIters();
+  public function set nIters(value);
+  function isActive();
+  function reset();
+  public function start();
+}

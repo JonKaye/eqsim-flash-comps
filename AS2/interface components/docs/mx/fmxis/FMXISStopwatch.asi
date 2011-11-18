@@ -1,0 +1,13 @@
+intrinsic class mx.fmxis.FMXISStopwatch extends mx.fmxis.FMXISBase {
+  var className:String;
+  static var swEvents:Array;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get pulseInt();
+  public function set pulseInt(value);
+  public function getTime():Number;
+  public function isActive();
+  public function pause();
+  public function reset();
+  public function start();
+}

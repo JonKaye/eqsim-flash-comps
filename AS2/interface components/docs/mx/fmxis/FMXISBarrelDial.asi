@@ -1,0 +1,20 @@
+intrinsic class mx.fmxis.FMXISBarrelDial extends mx.fmxis.FMXISBase {
+  var className:String;
+  static var dialEvents:Array;
+  public var evtOverflow:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get digTint();
+  public function set digTint(value);
+  public function get display();
+  public function set display(value);
+  public function get numDigs();
+  public function set numDigs(value);
+  public function get rollUp();
+  public function set rollUp(value);
+  public function get showBkgnd();
+  public function set showBkgnd(value);
+  public function get val();
+  public function set val(value);
+  function setColor(c);
+}

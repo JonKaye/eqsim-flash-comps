@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>onEvent</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="../../_sharedassets/pages.js"></script>
+</head>
+<body>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td width="100%" align="left"></td><td><a href="FStEngOneFive_25.html"><img src="../../_sharedassets/previous.gif" alt="Previous"></a><img src="../../_sharedassets/shim.gif" width="10"  height="1"><a href="FStEngOneFive_27.html"><img src="../../_sharedassets/next.gif" alt="Next"></a></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="11" width="1"></td></tr></table>
+<h1>onEvent</h1>
+<h4>Usage</h4>
+<pre>
+<i>myhStateC.onEvent()</i>
+</pre>
+<h4>Description</h4>
+<p>
+<p>This is a new feature of FStEng v1.5, which provides an easy way to direct 
+  and process events. Rather than having the developer provide an <code>ieh()</code> 
+  method, which determines the current state and which transitions or actions 
+  should be triggered, the new mechanism automatically routes the event to the 
+  most specific (deepest in network) active state's <code>onEvent</code> handler. 
+  The handler, by default, looks through the triggers of the transitions and internal 
+  actions on the state. If a trigger is true, it then fires the transition or 
+  action. The default routine passes the event to the state's parent to check 
+  its transitions and actions as well. If a transition or internal action gets 
+  fired, then parent states do not evaluate their transitions.</p>
+<p>This extra processing can add time because all triggers are checked in the chain of active states, regardless of their chance of success. The beauty of this system is that if a state wants to optimize event handling for itself and its sub-networks, it merely needs to override <code>onEvent</code> and follow the rules about passing up the event once finished. If you really need to optimize the event handling, you can still override <code>ieh()</code> and bypass this feature completely, and do it as described in our book.</p></p>
+<table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="6" width="1"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%"></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1"></td></tr><tr><td width="100%" align="left"></td><td><a href="FStEngOneFive_25.html"><img src="../../_sharedassets/previous.gif" alt="Previous"></a><img src="../../_sharedassets/shim.gif" width="10" height="1"><a href="FStEngOneFive_27.html"><img src="../../_sharedassets/next.gif" alt="Next"></a></td></tr></table>
+</body>
+</html>

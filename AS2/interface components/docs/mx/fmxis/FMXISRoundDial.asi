@@ -1,0 +1,17 @@
+intrinsic class mx.fmxis.FMXISRoundDial extends mx.fmxis.FMXISBase {
+  var className:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get centerVis();
+  public function set centerVis(value);
+  public function get nXScale();
+  public function set nXScale(value);
+  public function get nYScale();
+  public function set nYScale(value);
+  public function get showBack();
+  public function set showBack(value);
+  public function get val():Number;
+  public function set val(value:Number);
+  function attachChildren();
+  function setNumUnits(nu);
+}

@@ -1,0 +1,19 @@
+intrinsic class mx.fmxis.FMXISBar extends mx.fmxis.FMXISBase {
+  var className:String;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get barColorRange();
+  public function set barColorRange(value);
+  public function get barColors();
+  public function set barColors(value);
+  public function get barSpace();
+  public function set barSpace(value);
+  public function get maxVal();
+  public function set maxVal(value);
+  public function get minVal();
+  public function set minVal(value);
+  public function get nBars();
+  public function set nBars(value);
+  public function get val();
+  public function set val(value);
+}

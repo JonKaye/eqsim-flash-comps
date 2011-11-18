@@ -1,0 +1,11 @@
+intrinsic class mx.fmxis.FMXISButtonMomentaryLabel extends mx.fmxis.FMXISButtonMomentary {
+  var className:String;
+  public var LROffset:Number;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public var XYOffset:Number;
+  public function get justify():String;
+  public function set justify(value:String);
+  public function get text():String;
+  public function set text(value:String);
+}

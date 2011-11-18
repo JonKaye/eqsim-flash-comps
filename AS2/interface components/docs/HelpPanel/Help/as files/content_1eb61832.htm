@@ -1,0 +1,38 @@
+<html><head><title>FMXISJog Class</title><script language="JavaScript" src="../../_sharedassets/pages.js"></script></head><body><table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="4" width="1" /></td></tr><tr><td colspan="2"><img src="../../_sharedassets/pixel.gif" height="1" width="100%" /></td></tr><tr><td colspan="2"><img src="../../_sharedassets/shim.gif" height="11" width="1" /></td></tr></table><h1>FMXISJog Class</h1><p><strong>Inheritance </strong>
+			
+			&gt;
+			
+		<a href="content_f574e305.htm">FMXISBase</a>
+			
+			&gt;
+			
+		<a href="content_1eb61832.htm">FMXISJog</a></p><p><strong>ActionScript Class Name</strong> mx.fmxis.FMXISJog</p><p><p>This class implements a simple jog.  Developers can set the increment, number of positions
+in one cycle, integer vs. discrete, and whether the jog is adjusted by clicking and dragging,
+or merely moving in a circular motion (<code>dragOrOver</code>).</p>
+</p><p>
+Developers can change the appearance by modifying:
+<li><code>defJogBkgnd</code> - background</li>
+<li><code>defJogIndicator</code> - indicator clip</li>
+<li><code>defJogIncr</code> - Increment button (increments by 1 unit)</li>
+<li><code>defJogDecr</code> - Decrement button (decrements by 1 unit)</li>
+</p><p>
+<p>The class also has one property that developers can set in the component property panel,
+<code>indLinkID</code>, that replaces the default indicator graphic with a movie clip from
+the Library specified by the linkage ID supplied.  The movie clip must have its center at
+the center of rotation, so if the developer simply wants to change the indicator (notch), then the
+indicator should be placed in the topmost (pointing up) position at the edge of the background.  When
+a linkage ID is given, the component scales the background graphic to the maximum dimension of the indicator
+movie clip, so the hit area (determined by the background) is correct.  Usually, the developer will
+want to turn off the background graphic (using the property in the component property panel).</p>
+<p>The class has one event, by default called "onValChg" (but this can
+be changed in the property inspector, or by changing the <code>vChg</code> property), and
+the value is the increment that
+the jog was moved.  The <code>drawTicks</code> property, if true, tells the component
+to draw <code>numTicks</code> ticks.</p>
+</p><p>
+<p>The position of the jog indicator can be set using the <code>val</code> property.</p>
+</p><p>
+<p>This class inherits from <code>FMXISBase</code> to get listener capabilities.</p></p><h3>
+					Method summary for the FMXISJog Class</h3><table border="0" cellpadding="0" cellspacing="0"><tr><th><p>Method </p></th><th><p>Description </p></th></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_0e40ab0e.htm"><code>FMXISJog.decrJog()</code></a></p></td><td><p>Decrease the jog by 1 unit.</p></td></tr><tr><td valign="top"><p><a href="content_e08f276b.htm"><code>FMXISJog.execEvent()</code></a></p></td><td><p>Given an event string and value that matches what this component would generate, perform the action.</p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_a183e5a8.htm"><code>FMXISJog.incrJog()</code></a></p></td><td><p>Increase the jog by 1 unit.</p></td></tr><tr><td valign="top"><p><a href="content_a1845b71.htm"><code>FMXISJog.incrVal()</code></a></p></td><td><p>Increments the jog by incr units (positive or negative).</p></td></tr></table><h3>
+					Property summary for the FMXISJog Class</h3><table border="0" cellpadding="0" cellspacing="0"><tr><th><p>Property </p></th><th><p>Description </p></th></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_41ae09d5.htm"><code>FMXISJog.className</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_0df8be0b.htm"><code>FMXISJog.clickSnd</code></a></p></td><td><p></p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_ec4e6306.htm"><code>FMXISJog.discreteSteps</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_3a8d5db2.htm"><code>FMXISJog.JogEvent</code></a></p></td><td><p></p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_04eb8d8c.htm"><code>FMXISJog.numTicks</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_7a98be6f.htm"><code>FMXISJog.showButs</code></a></p></td><td><p></p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_cc2ad8f9.htm"><code>FMXISJog.showTicks</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_c90030f1.htm"><code>FMXISJog.snap2Int</code></a></p></td><td><p></p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_154552fd.htm"><code>FMXISJog.symbolName</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_bdd3d87b.htm"><code>FMXISJog.symbolOwner</code></a></p></td><td><p></p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_16caad69.htm"><code>FMXISJog.units</code></a></p></td><td><p></p></td></tr><tr><td valign="top"><p><a href="content_3f7def87.htm"><code>FMXISJog.val</code></a></p></td><td><p></p></td></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_2f3c67a6.htm"><code>FMXISJog.vChg</code></a></p></td><td><p></p></td></tr></table><h3>
+					Event summary for the FMXISJog Class</h3><table border="0" cellpadding="0" cellspacing="0"><tr><th><p>Event </p></th><th><p>Description </p></th></tr><tr bgcolor="#F8F8F8"><td valign="top"><p><a href="content_47339b6a.htm"><code>FMXISJog.onValChg</code></a></p></td><td><p>Event generated when jog knob value has changed.</p></td></tr></table><table class="nav" width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="6" width="1" /></td></tr><tr><td colspan="2"><img src="_sharedassets/pixel.gif" height="1" width="100%" /></td></tr><tr><td colspan="2"><img src="_sharedassets/shim.gif" height="4" width="1" /></td></tr></table><br /><br /><hr /><span style='font-size: x-small; font-family: Verdana, Arial'>Documentation generated by <a href='http://wwww.blinex.com/products/bldoc' target='_blank' alt='BLDoc Link'>BLDoc Community Edition</a> from <a href='http://www.blinex.com' target='_blank' alt='B-Line Express Website'>B-Line Express</a>.</body></html>

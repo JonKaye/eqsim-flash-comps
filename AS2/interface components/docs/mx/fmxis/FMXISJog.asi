@@ -1,0 +1,26 @@
+intrinsic class mx.fmxis.FMXISJog extends mx.fmxis.FMXISBase {
+  var className:String;
+  static var JogEvent;
+  public var snap2Int:Boolean;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public var vChg:String;
+  public function get clickSnd();
+  public function set clickSnd(value);
+  public function get discreteSteps();
+  public function set discreteSteps(value);
+  public function get numTicks();
+  public function set numTicks(value);
+  public function get showButs();
+  public function set showButs(value);
+  public function get showTicks();
+  public function set showTicks(value);
+  public function get units():Number;
+  public function set units(value:Number);
+  public function get val():Number;
+  public function set val(value:Number);
+  public function decrJog():Void;
+  public function execEvent(evName:String, evVal, q:Boolean):Void;
+  public function incrJog():Void;
+  public function incrVal(incr, q);
+}

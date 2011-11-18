@@ -1,0 +1,23 @@
+intrinsic class mx.fmxis.FMXISSlider extends mx.fmxis.FMXISBase {
+  var className:String;
+  public var evtChange:String;
+  static var sliderEvents:Array;
+  static var symbolName:String;
+  static var symbolOwner:Object;
+  public function get gutClicks();
+  public function set gutClicks(value);
+  public function get maxVal();
+  public function set maxVal(value);
+  public function get minVal();
+  public function set minVal(value);
+  public function get numDivs();
+  public function set numDivs(value);
+  public function get showHand();
+  public function set showHand(value);
+  public function get showTicks();
+  public function set showTicks(value);
+  public function get val();
+  public function set val(value);
+  public function execEvent(evName:String, evVal, q:Boolean):Void;
+  public function setValQuiet(v);
+}
