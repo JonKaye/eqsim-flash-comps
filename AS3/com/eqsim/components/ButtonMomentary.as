@@ -416,7 +416,7 @@ package com.eqsim.components {
 		protected function mouseDown (me:MouseEvent) : void {
 			press();
 			// catch the mouse up anywhere -- so we can tes
-			me.target.stage.addEventListener( MouseEvent.MOUSE_UP, mouseUpHandlerForReleaseOutside );
+			stage.addEventListener( MouseEvent.MOUSE_UP, mouseUpHandlerForReleaseOutside );
 		}
 		
 		/**
@@ -424,7 +424,7 @@ package com.eqsim.components {
 		 */
 		protected function mouseUpHandlerForReleaseOutside ( me : MouseEvent ) : void {
 			releaseOutside();
-    		me.target.removeEventListener( MouseEvent.MOUSE_UP, mouseUpHandlerForReleaseOutside );
+    		stage.removeEventListener( MouseEvent.MOUSE_UP, mouseUpHandlerForReleaseOutside );
 		}
 		
 		/**
@@ -489,6 +489,9 @@ package com.eqsim.components {
 		 Button released with mouse outside the hit area of the button.  Process the release.
 		 */
 		protected function releaseOutside (q:Boolean = false) : void {
+			timeUntilRepeat.stop();
+			repeaterInstance.stop();
+			
 			generateEvent(evtReleaseOutside, q);
 			if (enabled) {
 				setDown(false);
