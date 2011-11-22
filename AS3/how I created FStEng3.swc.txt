@@ -1,0 +1,9 @@
+How I created the FStEng code shim (Windows)
+
+I used the Flex sdk's compc program as follows in a cmd shell:
+
+set path=C:\Program Files (x86)\Adobe\Adobe Flash Builder 4.5\sdks\4.5.1\bin
+set JAVA_HOME="C:\Program Files (x86)\Java\jre1.5.0_22"
+compc -source-path C:\Users\Jonathan\Projects\EqSim-State-Machine-and-Components\AS3 -output C:\Users\Jonathan\Projects\EqSim-State-Machine-and-Components\AS3\FStEng3.swc -include-classes com.eqsim.FStEng.HState com.eqsim.FStEng.HStateC com.eqsim.FStEng.State com.eqsim.FStEng.StateManager com.eqsim.FStEng.StateEngine com.eqsim.FStEng.Transition com.eqsim.FStEng.State com.eqsim.FStEng.PulseActivity com.eqsim.events.EventWithData
+
+This produced the SWC FStEng3.swc.  I think I probably only really needed HState and it references everything else, but to be sure, I included all the classes.

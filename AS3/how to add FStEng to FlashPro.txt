@@ -1,0 +1,3 @@
+To use the FStEng3.swc from Flash Pro, the file needs to be in your Library classpath.  If you are using FDT or FlashDevelop, you probably already know how to do this, likely add it to your project folder and invoked Add, or something like that.
+
+In Flash Pro, open the Edit > Preferences... menu and go to ActionScript 3.0 settings, then in the Library listbox, above it, is a button to click on to locate the SWC.  Point to FStEng3.swc.  Alternatively, just add a line there (+) to the Library path.

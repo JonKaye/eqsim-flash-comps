@@ -1,0 +1,24 @@
+<macromedia-extension name="EqSim Interface Components and Hierarchical State Machine" version="3.0" type="Library">  
+    <author name="Jonathan Kaye" />  
+    <products>  
+        <product name="Flash" version="10" primary="true" />  
+    </products>  
+    <license-agreement>  
+        <![CDATA[The interface components extend Adobe's UIComponent, and hence any modifications to those files are dictated by Macromedia's End User License Agreement (EULA).  The Equipment Interface Library is licensed under then New BSD License, for both commercial and non-commercial use.  Read more about this license at http://www.opensource.org/licenses/bsd-license.php.  Copyright 2002-2012, Equipment Simulations LLC, all rights reserved.]]>  
+    </license-agreement>
+	<description>
+			<![CDATA[The EqSim Interface Component Library is a collection of visual and non-visual interface elements commonly found on equipment, for example, knobs, gauges, buttons, etc. The original library was developed for the book, "Flash MX for Interactive Simulation: How to Construct and Use Device Simulations" (Delmar Thomson Learning, November, 2002). For more information about this component set, see www.FlashSim.com and the project home page, http://code.google.com/p/eqsim-state-machine-and-interface-components/.  The hierarchical state machine is an adaptation from our book, with more info here: https://code.google.com/p/flash-state-engine/.]]>
+		</description>	
+    <ui-access>  
+        <![CDATA[window - Components (ctrl+f7)]]>  
+    </ui-access>  
+    <files>  
+        <file name="Buttons.fla" destination="$flash/Components/EqSim Interface Components/" />
+		<file name="Displays.fla" destination="$flash/Components/EqSim Interface Components/" />
+		<file name="Gauges.fla" destination="$flash/Components/EqSim Interface Components/" />
+		<file name="Knobs.fla" destination="$flash/Components/EqSim Interface Components/" />
+		<file name="Slider.fla" destination="$flash/Components/EqSim Interface Components/" />
+		<file name="Timers.fla" destination="$flash/Components/EqSim Interface Components/" />
+		
+    </files>  
+</macromedia-extension> 
