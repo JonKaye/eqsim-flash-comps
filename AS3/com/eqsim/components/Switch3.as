@@ -35,6 +35,7 @@ package com.eqsim.components {
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.utils.getDefinitionByName;
+	import flash.events.Event;
 	import flash.events.MouseEvent;
 
 	[IconFile("icons/switch.png")]
@@ -398,6 +399,8 @@ package com.eqsim.components {
 			} else {
 				switchSkin.hMid.addEventListener(MouseEvent.MOUSE_DOWN, flipToMiddle);
 			}
+			
+			addEventListener(Event.REMOVED_FROM_STAGE, catchNoStagePtr);
 		}
 		
 		
@@ -416,6 +419,19 @@ package com.eqsim.components {
 			}
 			if (switchSkin.hDown.hasEventListener(MouseEvent.MOUSE_UP)) {
 				switchSkin.hDown.removeEventListener(MouseEvent.MOUSE_UP, flipToMiddle);
+			}
+			
+			if (hasEventListener(Event.REMOVED_FROM_STAGE)) {
+				removeEventListener(Event.REMOVED_FROM_STAGE, catchNoStagePtr);
+			}
+		}
+		
+		/**
+		 * If we're removed from the stage after a press event but before getting a release event, make sure we remove the stage listener.
+		 */
+		protected function catchNoStagePtr (e:Event) {
+			if (stage != null && stage.hasEventListener( MouseEvent.MOUSE_UP ) ) {
+				stage.removeEventListener( MouseEvent.MOUSE_UP, flipToMiddle );
 			}
 		}
 		

@@ -300,12 +300,22 @@ package com.eqsim.components {
 			this.addEventListener(MouseEvent.MOUSE_UP, mouseUp);
 			this.addEventListener(MouseEvent.MOUSE_OVER, mouseRollOver);
 			this.addEventListener(MouseEvent.MOUSE_OUT, mouseRollOut);
+			this.addEventListener(Event.REMOVED_FROM_STAGE, catchNoStagePtr);
 			
 			buttonContainer.addChild(butUpSkin);
 			buttonContainer.addChild(butDownSkin);
 			addChild(buttonContainer);
 			
 			setDown(false);
+		}
+		
+		/**
+		 * If we're removed from the stage after a press event but before getting a release event, make sure we remove the stage listener.
+		 */
+		protected function catchNoStagePtr (e:Event) {
+			if (stage != null && stage.hasEventListener( MouseEvent.MOUSE_UP ) ) {
+				stage.removeEventListener( MouseEvent.MOUSE_UP, mouseUpHandlerForReleaseOutside );
+			}
 		}
 		
 		/**
@@ -404,6 +414,7 @@ package com.eqsim.components {
 			this.removeEventListener(MouseEvent.MOUSE_UP, mouseUp);
 			this.removeEventListener(MouseEvent.MOUSE_OVER, mouseRollOver);
 			this.removeEventListener(MouseEvent.MOUSE_OUT, mouseRollOut);
+			this.removeEventListener(Event.REMOVED_FROM_STAGE, catchNoStagePtr);
 		}
 		 
 		/* ***************************************************

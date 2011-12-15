@@ -383,6 +383,8 @@ Event generated when jog knob is set as <code>enabled == false</code>.  You can 
 				drawTicks();
 				
 			addChild(knobContainer);
+			
+			addEventListener(Event.REMOVED_FROM_STAGE, catchNoStagePtr);
 		}
 		
 		protected function setupMouseEvents () : void {
@@ -478,6 +480,7 @@ Event generated when jog knob is set as <code>enabled == false</code>.  You can 
 			indicatorClip.removeEventListener(MouseEvent.MOUSE_UP, jogRelease);
 			indicatorClip.removeEventListener(MouseEvent.ROLL_OVER, jogEngage);
 			indicatorClip.removeEventListener(MouseEvent.ROLL_OUT, jogRelease);
+			removeEventListener(Event.REMOVED_FROM_STAGE, catchNoStagePtr);
 		}
 		 
 		 
@@ -645,6 +648,18 @@ Event generated when jog knob is set as <code>enabled == false</code>.  You can 
 				if (_turnByDragging) {
 					stage.addEventListener(MouseEvent.MOUSE_UP, jogRelease);
 				}
+			}
+		}
+		
+		/**
+		 * If we're removed from the stage after a press event but before getting a release event, make sure we remove the stage listener.
+		 */
+		protected function catchNoStagePtr (e:Event) {
+			if (stage != null && stage.hasEventListener( MouseEvent.MOUSE_UP ) ) {
+				stage.removeEventListener(MouseEvent.MOUSE_UP, jogRelease);
+			}
+			if (stage != null && stage.hasEventListener ( MouseEvent.MOUSE_MOVE ) ) {
+				stage.removeEventListener(MouseEvent.MOUSE_MOVE, trackMouse);
 			}
 		}
 		

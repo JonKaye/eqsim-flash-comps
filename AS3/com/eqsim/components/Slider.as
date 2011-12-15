@@ -365,6 +365,8 @@ Event generated when slider is set as <code>enabled == false</code>.  You can ch
 			
 			resetBounds();
 			addChild(sliderContainer);
+			
+			addEventListener(Event.REMOVED_FROM_STAGE, catchNoStagePtr);
 		}
 		
 		
@@ -396,6 +398,8 @@ Event generated when slider is set as <code>enabled == false</code>.  You can ch
 			if (gutterClip.hasEventListener(MouseEvent.CLICK)) {
 				gutterClip.removeEventListener(MouseEvent.CLICK, gutterClick);
 			}
+			
+			removeEventListener(Event.REMOVED_FROM_STAGE, catchNoStagePtr);
 		}
 		 
 		 
@@ -403,7 +407,17 @@ Event generated when slider is set as <code>enabled == false</code>.  You can ch
 		 * Private/Protected Methods
 		 * *************************************************** */
 		
-		
+		/**
+		 * If we're removed from the stage after a press event but before getting a release event, make sure we remove the stage listener.
+		 */
+		protected function catchNoStagePtr (e:Event) {
+			if (stage != null && stage.hasEventListener( MouseEvent.MOUSE_UP ) ) {
+				stage.removeEventListener(MouseEvent.MOUSE_UP, thumbRelease);
+			}
+			if (stage != null && stage.hasEventListener ( MouseEvent.MOUSE_MOVE ) ) {
+				stage.removeEventListener(MouseEvent.MOUSE_MOVE, thumbMove);
+			}
+		}
 		
 		/**
 		Called to set the position of the indicator, and notify listeners.
