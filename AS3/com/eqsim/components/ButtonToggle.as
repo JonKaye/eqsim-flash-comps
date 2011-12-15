@@ -162,11 +162,16 @@ package com.eqsim.components {
 		
 		/**
 		Whether the button is in the down (set) or up (unset) position.  Set (down) is <code>true</code>, up is <code>false</code>.
+		Setting this value generates an onSet or an onUnset event.  If you do not want to generate the event, use <code>onSet(true)</code> or <code>onUnset(true)</code>.
 		@property buttonSet
 		*/
 		[Inspectable(name="Start in Down Position", type=Boolean, defaultValue=false)]
 		public function set buttonSet (f:Boolean) : void {
-			setDown(f);
+			if (f) {
+				onSet();
+			} else {
+				onUnset();
+			}
 			invalidate();
 		}
 		
@@ -297,11 +302,11 @@ package com.eqsim.components {
 		public function execEvent (evtName:String, evtVal:* = null, q:Boolean = false) : void {
 			switch (evtName) {
 				case evtSet:
-					setDown(true);
+					onSet(q);
 					break;
 					
 				case evtUnset:
-					setDown(false);
+					onUnset(q);
 					break;
 					
 				case evtDisabled:
@@ -317,6 +322,26 @@ package com.eqsim.components {
 		public function destroy () : void {
 			this.removeEventListener(MouseEvent.MOUSE_DOWN, mouseDown);
 		}
+		
+		/**
+		Put the button in the set (down) position and generate the onSet event (if q is true -- default is false).
+		 */
+		public function onSet (q:Boolean = false) : void {
+			if (enabled) {
+				generateEvent(evtSet, q);
+				setDown(true);
+			}
+		}
+		
+		/**
+		 Put the button in the unset (up) position and generate the onUnset event (if q is true -- default is false).
+		 */
+		public function onUnset (q:Boolean = false) : void {
+			if (enabled) {
+				generateEvent(evtUnset, q);
+				setDown(false);
+			}
+		}
 		 
 		/* ***************************************************
 		 * Private/Protected Methods
@@ -330,27 +355,6 @@ package com.eqsim.components {
 				onUnset();
 			} else {
 				onSet();
-			}
-		}
-
-		
-		/**
-		Put the button in the set (down) position and generate the onSet event.
-		 */
-		protected function onSet (q:Boolean = false) : void {
-			generateEvent(evtSet, q);
-			if (enabled) {
-				setDown(true);
-			}
-		}
-		
-		/**
-		 Put the button in the unset (up) position and generate the onUnset event.
-		 */
-		protected function onUnset (q:Boolean = false) : void {
-			generateEvent(evtUnset, q);
-			if (enabled) {
-				setDown(false);
 			}
 		}
 		
