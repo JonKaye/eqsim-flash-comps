@@ -324,7 +324,7 @@ package com.eqsim.components {
 		}
 		
 		/**
-		Put the button in the set (down) position and generate the onSet event (if q is true -- default is false).
+		Put the button in the set (down) position and generate the onSet event (if q [quietly] is <code>false</code> [default] -- <code>true</code> suppresses event generation).
 		 */
 		public function onSet (q:Boolean = false) : void {
 			if (enabled) {
@@ -334,7 +334,7 @@ package com.eqsim.components {
 		}
 		
 		/**
-		 Put the button in the unset (up) position and generate the onUnset event (if q is true -- default is false).
+		 Put the button in the unset (up) position and generate the onUnset event (if q [quietly] is <code>false</code> [default] -- <code>true</code> suppresses event generation).
 		 */
 		public function onUnset (q:Boolean = false) : void {
 			if (enabled) {
