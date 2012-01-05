@@ -482,7 +482,7 @@ Event generated when slider is set as <code>enabled == false</code>.  You can ch
 		protected function thumbEngage (me: MouseEvent) : void {
 			stage.addEventListener(MouseEvent.MOUSE_MOVE, thumbMove);
 			stage.addEventListener(MouseEvent.MOUSE_UP, thumbRelease);
-			indOffset = thumbClip.x - mouseX;
+			indOffset = thumbClip.x - sliderContainer.mouseX;
 		}
 		
 		protected function thumbRelease (me: MouseEvent) : void {
@@ -491,12 +491,12 @@ Event generated when slider is set as <code>enabled == false</code>.  You can ch
 		}
 		
 		protected function thumbMove(me: MouseEvent): void {
-			sliderClickHandle(mouseX + indOffset);
+			sliderClickHandle(sliderContainer.mouseX + indOffset);
 		}
 	
 		protected function gutterClick (me: MouseEvent) : void {
 			if (enabled) {
-				sliderClickHandle(mouseX);
+				sliderClickHandle(sliderContainer.mouseX);
 			} else {
 				dispatchEvent(new EventWithData(evtChange, false, false, evtDisabled));
 			}
