@@ -410,7 +410,7 @@ Event generated when slider is set as <code>enabled == false</code>.  You can ch
 		/**
 		 * If we're removed from the stage after a press event but before getting a release event, make sure we remove the stage listener.
 		 */
-		protected function catchNoStagePtr (e:Event) {
+		protected function catchNoStagePtr (e:Event) : void {
 			if (stage != null && stage.hasEventListener( MouseEvent.MOUSE_UP ) ) {
 				stage.removeEventListener(MouseEvent.MOUSE_UP, thumbRelease);
 			}

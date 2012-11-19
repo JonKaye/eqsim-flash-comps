@@ -479,7 +479,7 @@ package com.eqsim.FStEng {
 					
 					if (!handled) {
 						// Pass along the unhandled event in the event property of data
-						unhandledEvent.data.event = ev;
+						unhandledEvent.data = {event: ev};
 						dispatchEvent(unhandledEvent);
 					}
 					

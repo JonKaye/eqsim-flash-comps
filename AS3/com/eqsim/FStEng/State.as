@@ -272,23 +272,24 @@ package com.eqsim.FStEng {
 		}
 		
 		/**
-		<p>Change state using transition trans_i, with an optional value for the
-		transition function as a second argument.
-		If you look at the code, this function passes the information
-		to the chgSt method of the state manager to do the real work.  The reason we define
-		this dummy is so that modelers see the direct relationship to the transition id,
-		which is unique by state.  For example, if a caller wants to change the current state,
-		state 2, using transition 0, the caller would write:</p>
-		<code>state2.chgSt(0);</code>
-		<p>This implies that the transition 0 is relative to the state.  The same unaltered call
-		would be</p>
-		<code>sm.chgSt(0);</code>
-		<p>in which 'sm' is the state manager of state 2 and its siblings.  It is less obvious from the
-		second form that the processor is using the current state (2)'s transition 0, as opposed
-		to, perhaps, state 1 or 6's transition with id 0.</p>
+		<p>Change state using transition trans, with an optional value for the
+		transition function as a second argument.</p>
+		<p>The typical way to invoke transitions is by defining an event trigger for the transition,
+		then posting that event into the state engine. However, if you want to manage your state network
+		more manually, you might want a mechanism for invoking a transition directly.
+		</p>
+		<p>For example, if a caller wants to change the current state,
+		state 2 (stored in an example variable, <code>state2</code>), using transition <code>trans1</code>, the caller would write:</p>
+		<code>state2.chgSt(trans1);</code>
+		<p>The transition <code>trans1</code> is a Transition the caller created with <code>state2.addTransition...</code> method.</p>
+		<p>If you do not want to make separate variables for each transition, you can use the
+		<code>transitions</code> property of a State to retrieve transitions based on their target state ID. So the call
+		above could have been: <code>state2.chgSt(state2.transitions["trans target id"][0])</code> (where the
+		trans_target_id is the transition's target state ID). The reason for the [0] is that there may be more
+		than one transition going to the same target state, but in this case, we assume there is only one.
 		<p>The second argument, val, is an optional value to send in to the transition function.</p>
 		@method chgSt
-		@param transID
+		@param trans
 		@param val
 		*/
 		public function chgSt(trans:Transition, val:* = null) : void {
