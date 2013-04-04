@@ -1,4 +1,4 @@
-<macromedia-extension name="EqSim Interface Components and Hierarchical State Machine" version="3.0.3" type="Library">  
+<macromedia-extension name="EqSim Interface Components and Hierarchical State Machine" version="3.0.4" type="Library">  
     <author name="Jonathan Kaye" />  
     <products>  
         <product name="Flash" version="10" primary="true" />  

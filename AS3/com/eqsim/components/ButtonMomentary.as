@@ -415,6 +415,9 @@ package com.eqsim.components {
 			this.removeEventListener(MouseEvent.MOUSE_OVER, mouseRollOver);
 			this.removeEventListener(MouseEvent.MOUSE_OUT, mouseRollOut);
 			this.removeEventListener(Event.REMOVED_FROM_STAGE, catchNoStagePtr);
+			if (stage != null && stage.hasEventListener( MouseEvent.MOUSE_UP ) ) {
+				stage.removeEventListener( MouseEvent.MOUSE_UP, mouseUpHandlerForReleaseOutside );
+			}
 		}
 		 
 		/* ***************************************************
@@ -479,6 +482,9 @@ package com.eqsim.components {
 		 */
 		protected function mouseUp (me:MouseEvent) : void {
 			release();
+			if (stage != null && stage.hasEventListener( MouseEvent.MOUSE_UP ) ) {
+				stage.removeEventListener( MouseEvent.MOUSE_UP, mouseUpHandlerForReleaseOutside );
+			}
 			// don't bubble up, which would trigger the mouse up on the stage to invoke onReleaseOutside
     		me.stopImmediatePropagation( );
 		}
